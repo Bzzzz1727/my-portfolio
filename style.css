@@ -2044,6 +2044,96 @@ body {
   transform: translate(2px, -2px);
 }
 
+.video-casestudy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(181, 18, 32, 0.14);
+  border: 1px solid rgba(181, 18, 32, 0.5);
+  border-radius: 4px;
+  color: var(--paper-white);
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.video-casestudy-link:hover {
+  background: var(--blood-red);
+  border-color: var(--blood-red);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(181, 18, 32, 0.35);
+}
+
+.video-casestudy-link .arrow-glyph {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.video-casestudy-link:hover .arrow-glyph {
+  transform: translate(2px, -2px);
+}
+
+.video-casestudy-cta-strip {
+  margin-top: 24px;
+  display: flex;
+}
+
+.video-featured-casestudy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(181, 18, 32, 0.35);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.video-featured-casestudy-btn:hover {
+  background: rgba(181, 18, 32, 0.1);
+  border-color: var(--blood-red);
+  transform: translateX(4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 25px rgba(181, 18, 32, 0.2);
+}
+
+.video-featured-casestudy-btn .cs-kicker {
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--blood-red);
+  text-transform: uppercase;
+}
+
+.video-featured-casestudy-btn .cs-title {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--paper-white);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.video-featured-casestudy-btn .cs-title .arrow {
+  transition: transform 0.25s ease;
+  color: var(--blood-red);
+}
+
+.video-featured-casestudy-btn:hover .cs-title .arrow {
+  transform: translateX(4px);
+}
+
 .video-featured-title {
   font-family: var(--font-sans);
   font-size: clamp(2rem, 3.5vw, 3rem);
@@ -2924,9 +3014,17 @@ body.cinema-modal-open {
     align-items: stretch;
   }
   .video-cinema-trigger,
-  .video-youtube-link {
+  .video-youtube-link,
+  .video-casestudy-link {
     justify-content: center;
     width: 100%;
+  }
+  .video-featured-casestudy-btn {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    box-sizing: border-box;
   }
   .play-btn-circle {
     width: 52px;
