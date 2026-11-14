@@ -437,6 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalContainer = document.getElementById('preview-modal-container');
     const modalBackdrop = document.getElementById('preview-modal-backdrop');
     const modalClose = document.getElementById('preview-modal-close');
+    const modalDismissBtn = document.getElementById('modal-dismiss-btn');
     const modalImg = document.getElementById('modal-project-img');
     const modalBadge = document.getElementById('modal-project-badge');
     const modalTitle = document.getElementById('modal-project-title');
@@ -570,7 +571,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Modal container hover tracking: keeps preview open while hovering inside panel
+    // Pointer capability tracking (touch vs mouse)
+    let lastPointerType = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches) ? 'touch' : 'mouse';
+
+    window.addEventListener('pointerdown', (e) => {
+      if (e.pointerType) lastPointerType = e.pointerType;
+    }, { passive: true, capture: true });
+
+    window.addEventListener('touchstart', () => {
+      lastPointerType = 'touch';
+    }, { passive: true, capture: true });
+
+    window.addEventListener('mousemove', (e) => {
+      if (e.movementX !== 0 || e.movementY !== 0) {
+        lastPointerType = 'mouse';
+      }
+    }, { passive: true });
+
+    // Modal container interaction: keeps preview open while hovering inside panel
     if (modalContainer) {
       modalContainer.addEventListener('mouseenter', () => {
         isCursorOverPreview = true;
@@ -586,6 +604,11 @@ document.addEventListener('DOMContentLoaded', () => {
           scheduleClosePreview(CLOSE_DELAY_MS);
         }
       });
+
+      // Stop touch gestures inside modal container from moving carousel stage
+      modalContainer.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+      modalContainer.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
+      modalContainer.addEventListener('touchend', (e) => e.stopPropagation(), { passive: true });
     }
 
     if (modalClose) {
@@ -594,21 +617,79 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         closeExpandedPreview();
       });
-    }
-
-    if (modalBackdrop) {
-      modalBackdrop.addEventListener('click', (e) => {
+      modalClose.addEventListener('touchend', (e) => {
         e.preventDefault();
         e.stopPropagation();
         closeExpandedPreview();
       });
     }
 
-    // Dismiss preview when clicking outside modal container
-    document.addEventListener('pointerdown', (e) => {
+    if (modalDismissBtn) {
+      modalDismissBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeExpandedPreview();
+      });
+      modalDismissBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeExpandedPreview();
+      });
+    }
+
+    // Handles tapping outside the preview container (e.g. on backdrop or empty space)
+    const handleOutsideInteraction = (e) => {
       if (!isPreviewOpen) return;
       if (modalContainer && modalContainer.contains(e.target)) return;
-      if (activeCenterIndex >= 0 && slots[activeCenterIndex] && slots[activeCenterIndex].contains(e.target)) return;
+
+      const clientX = e.clientX ?? (e.changedTouches && e.changedTouches[0]?.clientX);
+      const clientY = e.clientY ?? (e.changedTouches && e.changedTouches[0]?.clientY);
+
+      let hitSlot = null;
+      if (typeof clientX === 'number' && typeof clientY === 'number') {
+        modal.style.pointerEvents = 'none';
+        const elUnder = document.elementFromPoint(clientX, clientY);
+        modal.style.pointerEvents = '';
+        if (elUnder) {
+          hitSlot = elUnder.closest('.cassette-slot');
+        }
+      }
+
+      if (hitSlot) {
+        const slotIdx = parseInt(hitSlot.dataset.index, 10);
+        if (!isNaN(slotIdx) && typeof handleSlotAction === 'function') {
+          if (slotIdx === activeCenterIndex) {
+            // Tapping selected cassette again closes it
+            closeExpandedPreview();
+          } else {
+            // Tapping different cassette closes current and opens newly selected
+            handleSlotAction(slotIdx, true);
+          }
+          return;
+        }
+      }
+
+      closeExpandedPreview();
+    };
+
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleOutsideInteraction(e);
+      });
+      modalBackdrop.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleOutsideInteraction(e);
+      });
+    }
+
+    // Dismiss preview when clicking outside modal container
+    document.addEventListener('click', (e) => {
+      if (!isPreviewOpen) return;
+      if (modalContainer && modalContainer.contains(e.target)) return;
+      if (e.target.closest('.cassette-slot')) return;
       closeExpandedPreview();
     });
 
@@ -886,20 +967,66 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+    let lastTouchHandledTime = 0;
+
+    handleSlotAction = (slotIndex, isTouch) => {
+      if (isDragging || hasDragged) return;
+
+      const projectIndex = ((slotIndex % NUM_PROJECTS) + NUM_PROJECTS) % NUM_PROJECTS;
+      const project = CASSETTE_PROJECTS[projectIndex];
+
+      if (isTouch) {
+        // ------------------------------------------------------------------
+        // MOBILE / TOUCH BEHAVIOUR
+        // - Tapping a cassette should open its preview.
+        // - The selected cassette should move to the centre and expand.
+        // - Tapping the selected cassette again, or tapping outside, should close it.
+        // - Tapping a different cassette should close current and open newly selected.
+        // ------------------------------------------------------------------
+        const isThisCenterAndOpen = (slotIndex === activeCenterIndex && isPreviewOpen && activeProjectId === project.id);
+
+        if (isThisCenterAndOpen) {
+          closeExpandedPreview();
+        } else {
+          cancelOpenPreview();
+          cancelClosePreview();
+          targetIndex = slotIndex;
+          openExpandedPreview(project, false);
+        }
+      } else {
+        // ------------------------------------------------------------------
+        // DESKTOP BEHAVIOUR
+        // - Preserve existing hover-to-preview behaviour.
+        // - Keep click behaviour for opening the full case study.
+        // ------------------------------------------------------------------
+        cancelOpenPreview();
+        cancelClosePreview();
+        if (slotIndex === activeCenterIndex) {
+          if (project.caseStudyUrl && project.caseStudyUrl !== '#') {
+            window.location.href = project.caseStudyUrl;
+          } else {
+            openExpandedPreview(project, true);
+          }
+        } else {
+          targetIndex = slotIndex;
+        }
+      }
+    };
+
     slots.forEach((slot, i) => {
       const projectIndex = ((i % NUM_PROJECTS) + NUM_PROJECTS) % NUM_PROJECTS;
       const project = CASSETTE_PROJECTS[projectIndex];
 
-      // Mouseenter on slot: ONLY active if this slot is the currently expanded center cassette
+      // Mouseenter on slot: ONLY active if this slot is the currently expanded center cassette on mouse
       slot.addEventListener('mouseenter', () => {
-        if (i === activeCenterIndex && slot.classList.contains('is-center')) {
+        if (lastPointerType === 'mouse' && i === activeCenterIndex && slot.classList.contains('is-center')) {
           handleCenterMouseEnter(i);
         }
       });
 
       // Mousemove on slot: ensures center cassette activates even if cursor was resting during scroll
       slot.addEventListener('mousemove', () => {
-        if (i === activeCenterIndex && slot.classList.contains('is-center')) {
+        if (lastPointerType === 'mouse' && i === activeCenterIndex && slot.classList.contains('is-center')) {
           if (!isCursorOverCenter) {
             handleCenterMouseEnter(i);
           }
@@ -908,7 +1035,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Mouseleave on slot: ONLY active for center cassette
       slot.addEventListener('mouseleave', (e) => {
-        if (i === activeCenterIndex) {
+        if (lastPointerType === 'mouse' && i === activeCenterIndex) {
           handleCenterMouseLeave(i, e);
         }
       });
@@ -917,29 +1044,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const front = slot.querySelector('.cassette-front');
       if (front) {
         front.addEventListener('mouseenter', () => {
-          if (i === activeCenterIndex && slot.classList.contains('is-center')) {
+          if (lastPointerType === 'mouse' && i === activeCenterIndex && slot.classList.contains('is-center')) {
             handleCenterMouseEnter(i);
           }
         });
         front.addEventListener('mouseleave', (e) => {
-          if (i === activeCenterIndex) {
+          if (lastPointerType === 'mouse' && i === activeCenterIndex) {
             handleCenterMouseLeave(i, e);
           }
         });
       }
 
-      // NOTE: Side cassettes and spines (.cassette-spine) have NO preview hover handlers attached!
-      // This guarantees the six surrounding narrow spines never trigger any preview.
+      // Touch tap handler on mobile: instant 0ms response without double-tap
+      slot.addEventListener('touchend', (e) => {
+        if (isDragging || hasDragged || touchMoved) return;
+        const clientX = e.changedTouches[0]?.clientX ?? 0;
+        const clientY = e.changedTouches[0]?.clientY ?? 0;
+        const deltaX = Math.abs(clientX - touchStartX);
+        const deltaY = Math.abs(clientY - touchStartY);
+        if (deltaX > 8 || deltaY > 8) return;
 
-      // Click: centers cassette and ensures preview is open (strictly NO navigation)
+        e.preventDefault();
+        lastTouchHandledTime = Date.now();
+        handleSlotAction(i, true);
+      }, { passive: false });
+
+      // Click handler: handles desktop clicks & touch fallback
       slot.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        if (Date.now() - lastTouchHandledTime < 450) return;
         if (isDragging || hasDragged) return;
-        cancelOpenPreview();
-        cancelClosePreview();
-        targetIndex = i;
-        openExpandedPreview(project, true);
+
+        const isTouch = (lastPointerType === 'touch') || (e.pointerType === 'touch') || window.matchMedia('(pointer: coarse)').matches;
+        handleSlotAction(i, isTouch);
       });
 
       slot.addEventListener('keydown', (e) => {
@@ -1012,40 +1150,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // ------------------------------------------------------------------------
     let touchStartX = 0;
     let touchStartY = 0;
+    let touchStartTime = 0;
     let isHorizontalTouch = false;
     let touchMoved = false;
 
     stage.addEventListener('touchstart', (e) => {
-      cancelOpenPreview();
-      if (e.touches.length > 0) {
+      if (e.touches.length === 1) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
         dragStartIndex = currentIndex;
         isHorizontalTouch = false;
         touchMoved = false;
-        isDragging = true;
+        isDragging = false;
+        hasDragged = false;
       }
     }, { passive: true });
 
     stage.addEventListener('touchmove', (e) => {
-      if (!isDragging || e.touches.length === 0) return;
+      if (e.touches.length === 0) return;
       const clientX = e.touches[0].clientX;
       const clientY = e.touches[0].clientY;
       const deltaX = clientX - touchStartX;
       const deltaY = clientY - touchStartY;
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
 
-      if (!touchMoved && (Math.abs(deltaX) > 6 || Math.abs(deltaY) > 6)) {
+      if (!touchMoved && (absX > 7 || absY > 7)) {
         touchMoved = true;
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (absX > absY) {
+          // Horizontal carousel swipe
           isHorizontalTouch = true;
+          isDragging = true;
+          hasDragged = true;
+          cancelOpenPreview();
+          cancelClosePreview();
         } else {
+          // Vertical page scroll: don't lock
+          isHorizontalTouch = false;
           isDragging = false;
           return;
         }
       }
 
-      if (isHorizontalTouch) {
-        e.preventDefault();
+      if (isHorizontalTouch && isDragging) {
+        if (e.cancelable) e.preventDefault();
         const metrics = getMetrics();
         const deltaIndex = deltaX / metrics.dSide;
         currentIndex = dragStartIndex - deltaIndex;
@@ -1058,8 +1207,12 @@ document.addEventListener('DOMContentLoaded', () => {
         targetIndex = Math.round(currentIndex);
         setTimeout(() => {
           isDragging = false;
+          hasDragged = false;
           touchMoved = false;
-        }, 60);
+        }, 50);
+      } else {
+        isDragging = false;
+        hasDragged = false;
       }
     });
 
