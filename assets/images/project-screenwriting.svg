@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="scriptBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf8f4"/>
+      <stop offset="100%" stop-color="#f0ebe1"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#scriptBg)"/>
+  <rect x="24" y="24" width="752" height="452" rx="4" fill="none" stroke="#ddd7ca" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Screenplay Courier Script Page Simulation -->
+  <g transform="translate(140, 50)">
+    <rect x="0" y="0" width="520" height="390" rx="3" fill="#ffffff" stroke="#d5cebe" stroke-width="1.5" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.05))"/>
+    
+    <!-- Title Page / Opening Scene Markup -->
+    <g transform="translate(50, 45)">
+      <!-- Slugline -->
+      <text x="0" y="20" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700" fill="#121212">EXT. CITY TRANSIT PLATFORM - DAWN</text>
+      
+      <!-- Action Line -->
+      <text x="0" y="48" font-family="'Courier New', Courier, monospace" font-size="13" fill="#3a3832">A cold mist clings to the overhead steel rafters. NEHA (20s)</text>
+      <text x="0" y="68" font-family="'Courier New', Courier, monospace" font-size="13" fill="#3a3832">stands at the yellow line, clutch in hand, studying the</text>
+      <text x="0" y="88" font-family="'Courier New', Courier, monospace" font-size="13" fill="#3a3832">flickering departure schedule.</text>
+
+      <!-- Character Cue -->
+      <text x="180" y="130" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700" fill="#121212">NEHA</text>
+      <!-- Dialogue -->
+      <text x="110" y="152" font-family="'Courier New', Courier, monospace" font-size="13" fill="#3a3832">If we miss this cut, the whole third act</text>
+      <text x="110" y="170" font-family="'Courier New', Courier, monospace" font-size="13" fill="#3a3832">falls apart.</text>
+
+      <!-- Character 2 Cue -->
+      <text x="180" y="205" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700" fill="#121212">LEO (O.S.)</text>
+      <!-- Dialogue -->
+      <text x="110" y="227" font-family="'Courier New', Courier, monospace" font-size="13" fill="#3a3832">Then we rewrite the ending.</text>
+
+      <!-- Transition -->
+      <text x="360" y="270" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700" fill="#121212">CUT TO:</text>
+
+      <!-- Footer Note -->
+      <line x1="0" y1="290" x2="420" y2="290" stroke="#eee9dc"/>
+      <text x="0" y="315" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8a867c">Replace with: assets/images/project-screenwriting.jpg</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="filmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e2024"/>
+      <stop offset="100%" stop-color="#111215"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#filmBg)"/>
+  
+  <!-- Film Slate & Cinematic Aspect Frame -->
+  <rect x="40" y="40" width="720" height="420" rx="4" fill="none" stroke="#333742" stroke-width="1.5"/>
+  <rect x="60" y="70" width="680" height="360" rx="2" fill="#181a1f" stroke="#282b34"/>
+
+  <!-- Rule of Thirds Guides -->
+  <line x1="286" y1="70" x2="286" y2="430" stroke="#242730" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="513" y1="70" x2="513" y2="430" stroke="#242730" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="60" y1="190" x2="740" y2="190" stroke="#242730" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="60" y1="310" x2="740" y2="310" stroke="#242730" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Center Framing Silhouette / Camera Marker -->
+  <g transform="translate(400, 220)">
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#e4e1d8" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#10b981"/>
+    <line x1="-60" y1="0" x2="-48" y2="0" stroke="#e4e1d8" stroke-width="2"/>
+    <line x1="48" y1="0" x2="60" y2="0" stroke="#e4e1d8" stroke-width="2"/>
+    <line x1="0" y1="-60" x2="0" y2="-48" stroke="#e4e1d8" stroke-width="2"/>
+    <line x1="0" y1="48" x2="0" y2="60" stroke="#e4e1d8" stroke-width="2"/>
+  </g>
+
+  <!-- Cinema HUD Data -->
+  <g transform="translate(85, 105)">
+    <rect x="0" y="0" width="95" height="22" rx="11" fill="#e4e1d8"/>
+    <text x="47" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#121212" text-anchor="middle">FILMMAKING</text>
+    
+    <text x="0" y="48" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8a8f9d">REC &bull; 24 FPS &bull; 4K DCI &bull; 800 ISO</text>
+    <text x="0" y="270" font-family="Georgia, serif" font-size="24" fill="#f4f5f8">Narrative Short Film Still</text>
+    <text x="0" y="295" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8a8f9d">Replace with: assets/images/project-filmmaking.jpg</text>
+  </g>
+</svg>

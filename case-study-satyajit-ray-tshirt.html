@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SATYAJIT RAY — T-SHIRT DESIGN | Neha Trivedi</title>
+  
+  <meta name="description" content="Case study for Satyajit Ray — T-Shirt Design by Neha Trivedi. Freelance apparel & merchandise design inspired by Satyajit Ray, featuring Bengali typography and hand-drawn character illustration.">
+  <meta name="author" content="Neha Trivedi">
+  
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts: Inter, Cinzel & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==========================================================================
+       CASE STUDY: SATYAJIT RAY — T-SHIRT DESIGN
+       Visual Identity: Minimal, experimental and editorial.
+       Palette: Black (#000000 / #0A0A0A), Paper White (#FFFFFF), Deep Red (#B51220).
+       Apparel Accent: Natural Sand / Khaki (#C1A97C).
+       ========================================================================== */
+
+    :root {
+      --case-max-w: 1040px;
+      --case-wide-w: 1200px;
+      --case-border: rgba(255, 255, 255, 0.08);
+      --case-border-hover: rgba(255, 255, 255, 0.18);
+      --case-text-muted: rgba(255, 255, 255, 0.68);
+      --case-text-faint: rgba(255, 255, 255, 0.42);
+      --case-panel-bg: rgba(255, 255, 255, 0.02);
+      --case-bg-dark: #080808;
+      --fabric-tan: #C1A97C;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body.case-page {
+      background-color: var(--ink-black, #000000);
+      color: var(--paper-white, #FFFFFF);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans, 'Inter', sans-serif);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --------------------------------------------------------------------------
+       1. STICKY TOP NAVIGATION
+       -------------------------------------------------------------------------- */
+    .case-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--case-border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.3s ease;
+    }
+
+    .case-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .case-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+      outline: none;
+    }
+
+    .case-nav-back:hover {
+      color: var(--blood-red, #B51220);
+      transform: translateX(-3px);
+    }
+
+    .case-nav-back:focus-visible {
+      color: var(--blood-red, #B51220);
+      outline: 2px solid var(--blood-red, #B51220);
+      outline-offset: 4px;
+    }
+
+    .case-nav-back .back-arrow {
+      font-family: system-ui, sans-serif;
+      transition: transform 0.25s ease;
+    }
+
+    .case-nav-back:hover .back-arrow {
+      transform: translateX(-2px);
+    }
+
+    .case-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .case-nav-brand {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+    }
+
+    .case-nav-badge {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blood-red, #B51220);
+      padding: 3px 8px;
+      border: 1px solid rgba(181, 18, 32, 0.4);
+      border-radius: 2px;
+      background: rgba(181, 18, 32, 0.08);
+    }
+
+    /* --------------------------------------------------------------------------
+       2. HERO SECTION — EDITORIAL APPAREL PRESENTATION
+       -------------------------------------------------------------------------- */
+    .case-hero {
+      padding: 64px 24px 56px;
+      max-width: var(--case-wide-w);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .case-hero-pre {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blood-red, #B51220);
+      margin-bottom: 16px;
+    }
+
+    .case-hero-pre .badge-dot {
+      font-size: 8px;
+      line-height: 1;
+    }
+
+    .case-hero-title {
+      font-family: var(--font-sans);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+
+    .case-hero-category {
+      font-family: var(--font-sans);
+      font-size: clamp(13px, 1.8vw, 16px);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 0 12px;
+    }
+
+    .case-hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(14px, 1.6vw, 17px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--case-text-muted);
+      margin: 0 auto 48px;
+      max-width: 680px;
+    }
+
+    /* Prominent T-Shirt Mockup Centerpiece */
+    .case-hero-mockup-stage {
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+
+    .case-hero-mockup-frame {
+      position: relative;
+      background: radial-gradient(circle at 50% 40%, rgba(193, 169, 124, 0.08) 0%, rgba(181, 18, 32, 0.12) 50%, rgba(0, 0, 0, 0.98) 85%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.95), 0 0 60px rgba(181, 18, 32, 0.18);
+      box-sizing: border-box;
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .case-hero-mockup-frame:hover {
+      border-color: rgba(181, 18, 32, 0.45);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.98), 0 0 70px rgba(181, 18, 32, 0.28);
+    }
+
+    .case-hero-mockup-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 682 / 1024;
+      display: block;
+      border-radius: 4px;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9));
+      object-fit: contain;
+    }
+
+    /* Filmic Registration Corners */
+    .stage-film-corners {
+      position: absolute;
+      inset: 14px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .stage-cross {
+      position: absolute;
+      font-family: var(--font-mono, monospace);
+      font-size: 13px;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.28);
+    }
+
+    .stage-cross.tl { top: 0; left: 0; }
+    .stage-cross.tr { top: 0; right: 0; }
+    .stage-cross.bl { bottom: 0; left: 0; }
+    .stage-cross.br { bottom: 0; right: 0; }
+
+    /* Project Metadata Strip */
+    .case-hero-meta-strip {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      border-top: 1px solid var(--case-border);
+      border-bottom: 1px solid var(--case-border);
+      padding: 24px 0;
+      box-sizing: border-box;
+    }
+
+    .case-meta-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .case-meta-label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blood-red, #B51220);
+    }
+
+    .case-meta-val {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--paper-white);
+    }
+
+    /* --------------------------------------------------------------------------
+       3. EDITORIAL DETAILS EXPLORATION
+       -------------------------------------------------------------------------- */
+    .case-section {
+      padding: 56px 24px;
+      max-width: var(--case-max-w);
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .case-section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100%);
+      margin: 24px 0;
+    }
+
+    .case-section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--blood-red, #B51220);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .case-section-title {
+      font-family: var(--font-sans);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+      margin: 0 0 16px;
+      line-height: 1.15;
+    }
+
+    .case-body-lead {
+      font-family: var(--font-sans);
+      font-size: clamp(15px, 1.8vw, 17px);
+      line-height: 1.65;
+      color: var(--case-text-muted);
+      margin: 0 0 40px;
+      max-width: 840px;
+    }
+
+    /* Two-Column Detail Cards Grid */
+    .case-details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .case-detail-card {
+      background: rgba(18, 18, 18, 0.7);
+      border: 1px solid var(--case-border);
+      border-radius: 6px;
+      padding: 28px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .case-detail-card:hover {
+      border-color: rgba(181, 18, 32, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .card-detail-tag {
+      font-family: var(--font-mono, monospace);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--blood-red, #B51220);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card-detail-heading {
+      font-family: var(--font-sans);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--paper-white);
+      margin: 0 0 12px;
+    }
+
+    .card-detail-bengali-quote {
+      font-family: serif;
+      font-size: 19px;
+      line-height: 1.5;
+      color: #FFFFFF;
+      background: rgba(0, 0, 0, 0.55);
+      border-left: 3px solid var(--blood-red, #B51220);
+      padding: 14px 18px;
+      border-radius: 0 4px 4px 0;
+      margin: 10px 0 16px;
+    }
+
+    .card-detail-text {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--case-text-muted);
+      margin: 0;
+    }
+
+    /* Full-Width Artwork Spotlight */
+    .case-spotlight-panel {
+      background: radial-gradient(ellipse at center, rgba(193, 169, 124, 0.05) 0%, rgba(0, 0, 0, 0.95) 75%);
+      border: 1px solid var(--case-border);
+      border-radius: 8px;
+      padding: 36px 24px;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .spotlight-caption {
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--case-text-faint);
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    /* --------------------------------------------------------------------------
+       4. CLOSING / FOOTER NAVIGATION
+       -------------------------------------------------------------------------- */
+    .case-footer {
+      border-top: 1px solid var(--case-border);
+      padding: 48px 24px 64px;
+      max-width: var(--case-wide-w);
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .footer-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .footer-btn-primary {
+      background: var(--blood-red, #B51220);
+      color: #FFFFFF;
+      border: 1px solid var(--blood-red, #B51220);
+    }
+
+    .footer-btn-primary:hover {
+      background: #cf1526;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(181, 18, 32, 0.4);
+    }
+
+    .footer-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--paper-white);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .footer-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .footer-credits {
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--case-text-faint);
+    }
+
+    /* --------------------------------------------------------------------------
+       5. RESPONSIVE MEDIA QUERIES
+       -------------------------------------------------------------------------- */
+    @media (max-width: 860px) {
+      .case-hero-meta-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .case-details-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .case-nav {
+        padding: 14px 18px;
+      }
+      .case-hero {
+        padding: 40px 16px 36px;
+      }
+      .case-hero-mockup-frame {
+        padding: 14px;
+      }
+      .case-hero-meta-strip {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 18px 0;
+      }
+      .case-section {
+        padding: 40px 16px;
+      }
+      .case-detail-card {
+        padding: 20px;
+      }
+      .footer-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .footer-btn {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body class="case-page">
+
+  <!-- Sticky Top Navigation -->
+  <header>
+    <nav class="case-nav" aria-label="Case Study Navigation">
+      <div class="case-nav-left">
+        <a href="index.html#graphic-design" class="case-nav-back">
+          <span class="back-arrow" aria-hidden="true">←</span> BACK TO GRAPHIC DESIGN
+        </a>
+      </div>
+      <div class="case-nav-right">
+        <span class="case-nav-brand">Neha Trivedi</span>
+        <span class="case-nav-badge">Freelance Project</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- Hero Header & Primary Prominent T-Shirt Mockup -->
+    <section class="case-hero" aria-label="Project Hero Header">
+      
+      <div class="case-hero-pre">
+        <span class="badge-dot" aria-hidden="true">●</span> FREELANCE PROJECT
+      </div>
+
+      <h1 class="case-hero-title">SATYAJIT RAY — T-SHIRT DESIGN</h1>
+      <p class="case-hero-category">APPAREL &amp; MERCHANDISE DESIGN</p>
+      
+      <p class="case-hero-subtitle">
+        This is a T-shirt design inspired by Satyajit Ray, featuring Bengali typography and a hand-drawn character illustration.
+      </p>
+
+      <!-- Prominent T-Shirt Mockup Centerpiece -->
+      <div class="case-hero-mockup-stage">
+        <div class="case-hero-mockup-frame">
+          <div class="stage-film-corners" aria-hidden="true">
+            <span class="stage-cross tl">+</span>
+            <span class="stage-cross tr">+</span>
+            <span class="stage-cross bl">+</span>
+            <span class="stage-cross br">+</span>
+          </div>
+          
+          <img src="assets/images/satyajit-ray-tshirt.jpg" 
+               alt="Satyajit Ray T-Shirt Design Mockup — Complete uncropped garment featuring chest typography and hand-drawn character illustration" 
+               class="case-hero-mockup-img" 
+               width="682" 
+               height="1024">
+        </div>
+      </div>
+
+      <!-- Project Metadata Strip -->
+      <div class="case-hero-meta-strip">
+        <div class="case-meta-cell">
+          <span class="case-meta-label">PROJECT TYPE</span>
+          <span class="case-meta-val">Freelance Project</span>
+        </div>
+        <div class="case-meta-cell">
+          <span class="case-meta-label">CATEGORY</span>
+          <span class="case-meta-val">Apparel &amp; Merchandise Design</span>
+        </div>
+        <div class="case-meta-cell">
+          <span class="case-meta-label">INSPIRATION</span>
+          <span class="case-meta-val">Satyajit Ray</span>
+        </div>
+        <div class="case-meta-cell">
+          <span class="case-meta-label">MEDIUM</span>
+          <span class="case-meta-val">Screenprint on Apparel</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Editorial Exploration: Typography & Illustration Breakdown -->
+    <section class="case-section" aria-label="Design Components Exploration">
+      
+      <div class="case-section-divider" aria-hidden="true"></div>
+
+      <span class="case-section-kicker">01 // VISUAL BREAKDOWN</span>
+      <h2 class="case-section-title">ELEMENTS &amp; INSPIRATION</h2>
+      <p class="case-body-lead">
+        Honoring the visual and literary world of Satyajit Ray, this freelance apparel design balances expressive hand-drawn illustration with literary Bengali letterforms across a neutral textile canvas.
+      </p>
+
+      <div class="case-details-grid">
+        
+        <!-- Detail 1: Bengali Typography -->
+        <div class="case-detail-card">
+          <div>
+            <span class="card-detail-tag">01 // CHEST LETTERFORMS</span>
+            <h3 class="card-detail-heading">Bengali Typography</h3>
+            <div class="card-detail-bengali-quote">
+              "ভয় না পেলে তারি আগিবান্রের বড়ো শৌন হর পীরভম না !"
+            </div>
+          </div>
+          <p class="card-detail-text">
+            Printed across the upper chest, the Bengali quote carries the distinctive character of Ray's literary voice, scaled with deliberate editorial restraint against the garment's neckline.
+          </p>
+        </div>
+
+        <!-- Detail 2: Hand-Drawn Character Illustration -->
+        <div class="case-detail-card">
+          <div>
+            <span class="card-detail-tag">02 // LOWER HEM ARTWORK</span>
+            <h3 class="card-detail-heading">Hand-Drawn Character</h3>
+          </div>
+          <p class="card-detail-text">
+            Anchored at the lower front hem, the character illustration pays homage to Ray's iconic illustrated protagonists and folkloric visual universe—complete with expressive eyes, spiked crown details, scroll banner lettering, and curled shoes.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Spotlight Frame -->
+      <div class="case-spotlight-panel">
+        <div class="stage-film-corners" aria-hidden="true">
+          <span class="stage-cross tl">+</span>
+          <span class="stage-cross tr">+</span>
+          <span class="stage-cross bl">+</span>
+          <span class="stage-cross br">+</span>
+        </div>
+        <img src="assets/images/satyajit-ray-tshirt.jpg" 
+             alt="Full scale view of Satyajit Ray T-Shirt design" 
+             style="max-width: 480px; width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto;"
+             loading="lazy">
+        <div class="spotlight-caption">
+          AUTHENTIC GARMENT MOCKUP // NATURAL KHAKI COTTON APPAREL
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Editorial Closing / Navigation Footer -->
+  <footer class="case-footer">
+    <div class="footer-actions">
+      <a href="index.html#graphic-design" class="footer-btn footer-btn-primary">
+        ← RETURN TO GRAPHIC DESIGN
+      </a>
+      <a href="index.html" class="footer-btn footer-btn-secondary">
+        PORTFOLIO HOME
+      </a>
+    </div>
+
+    <div class="footer-credits">
+      NEHA TRIVEDI · © 2026 · DESIGNED &amp; BUILT WITH INTENTION.
+    </div>
+  </footer>
+
+</body>
+</html>

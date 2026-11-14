@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ART AGAINST FASCISTS — Protest Poster Series | Neha Trivedi</title>
+  
+  <meta name="description" content="Case study for Art Against Fascists by Neha Trivedi. An independent series of protest posters, colour palette documentation, and cassette artwork created in support of the Delhi protest in June–July 2026.">
+  <meta name="author" content="Neha Trivedi">
+  
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts: Inter, Cinzel & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==========================================================================
+       CASE STUDY: ART AGAINST FASCISTS — EDITORIAL PROTEST POSTER SERIES
+       Aesthetic: Black, distressed textures, high-contrast monochrome imagery,
+       deep protest red (#D82D33 / #DE2228), raw print grain, bold typography.
+       Layout: Editorial series structure honoring individual full-size moments
+       with zero repeated posters and dedicated colour palette documentation.
+       ========================================================================== */
+
+    :root {
+      --aaf-bg: #0A0A0A;
+      --aaf-bg-alt: #111111;
+      --aaf-bg-card: #161616;
+      --aaf-ink: #F5F2EB;
+      --aaf-ink-muted: #A39E96;
+      --aaf-ink-faint: #6E6962;
+      --aaf-red: #D82D33;
+      --aaf-red-bright: #E82930;
+      --aaf-red-tint: rgba(216, 45, 51, 0.12);
+      --aaf-red-border: rgba(216, 45, 51, 0.35);
+      --aaf-border: rgba(255, 255, 255, 0.09);
+      --aaf-border-subtle: rgba(255, 255, 255, 0.05);
+      --aaf-max-w: 1040px;
+      --aaf-wide-w: 1200px;
+      --aaf-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.55);
+      --aaf-shadow-md: 0 16px 40px rgba(0, 0, 0, 0.75);
+      --aaf-shadow-lg: 0 28px 64px rgba(0, 0, 0, 0.9);
+    }
+
+    html, body {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: var(--aaf-bg) !important;
+      color: var(--aaf-ink) !important;
+      font-family: var(--font-sans);
+      margin: 0;
+      padding: 0;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Subtle Grain Overlay */
+    .protest-grain-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.038;
+      background-image: radial-gradient(#F5F2EB 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+
+    .case-wrapper {
+      position: relative;
+      z-index: 2;
+      background-color: var(--aaf-bg);
+      color: var(--aaf-ink);
+    }
+
+    /* --------------------------------------------------------------------------
+       1. STICKY TOP NAVIGATION
+       -------------------------------------------------------------------------- */
+    .case-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--aaf-border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .case-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .case-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--aaf-ink-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .case-back-link:hover {
+      color: var(--aaf-red);
+      transform: translateX(-3px);
+    }
+
+    .case-back-link .arrow-icon {
+      font-size: 14px;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .case-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .case-nav-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--aaf-ink);
+      text-transform: uppercase;
+    }
+
+    .case-nav-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--aaf-red);
+      background: var(--aaf-red-tint);
+      border: 1px solid var(--aaf-red-border);
+      padding: 3px 9px;
+      border-radius: 2px;
+    }
+
+    /* --------------------------------------------------------------------------
+       CONTAINERS & SECTION UTILITIES
+       -------------------------------------------------------------------------- */
+    .case-container {
+      max-width: var(--aaf-max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .case-container-wide {
+      max-width: var(--aaf-wide-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .case-section {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--aaf-border-subtle);
+    }
+
+    .case-section-alt {
+      background-color: var(--aaf-bg-alt);
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--aaf-red);
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 4.2vw, 46px);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--aaf-ink);
+      margin: 0 0 20px;
+      line-height: 1.2;
+    }
+
+    .section-subhead {
+      font-size: clamp(16px, 1.8vw, 19px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--aaf-ink-muted);
+      max-width: 780px;
+      margin: 0 0 48px;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 1: HERO / OPENING
+       -------------------------------------------------------------------------- */
+    .case-hero {
+      padding: 88px 0 96px;
+      text-align: center;
+      border-bottom: 1px solid var(--aaf-border);
+      background: radial-gradient(circle at 50% 25%, rgba(216, 45, 51, 0.08) 0%, transparent 68%);
+    }
+
+    .case-hero-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .case-hero-badge-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aaf-red);
+      background: var(--aaf-red-tint);
+      border: 1px solid var(--aaf-red-border);
+      padding: 5px 14px;
+      border-radius: 2px;
+    }
+
+    .case-hero-category-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aaf-ink-faint);
+    }
+
+    .case-hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(38px, 6.5vw, 80px);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--aaf-ink);
+      margin: 0 auto 18px;
+      line-height: 1.08;
+      max-width: 940px;
+    }
+
+    .case-hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(13px, 1.5vw, 16px);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aaf-ink-muted);
+      margin-bottom: 36px;
+    }
+
+    .case-hero-intro-box {
+      max-width: 780px;
+      margin: 0 auto 40px;
+      padding: 28px 36px;
+      background: rgba(22, 22, 22, 0.7);
+      border-left: 3px solid var(--aaf-red);
+      border-right: 1px solid var(--aaf-border-subtle);
+      border-top: 1px solid var(--aaf-border-subtle);
+      border-bottom: 1px solid var(--aaf-border-subtle);
+      border-radius: 0 4px 4px 0;
+      text-align: left;
+    }
+
+    .case-hero-intro-text {
+      font-size: clamp(15.5px, 1.7vw, 18px);
+      line-height: 1.8;
+      color: var(--aaf-ink);
+      margin: 0;
+      font-style: normal;
+    }
+
+    .case-hero-meta-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--aaf-ink-muted);
+    }
+
+    .case-hero-meta-tags span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .case-hero-meta-tags strong {
+      color: var(--aaf-ink);
+      font-weight: 600;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 2: THE POSTER SERIES (3 CONSECUTIVE EDITORIAL MOMENTS)
+       Order: 
+         1. Cockroach with red mark (fascists-poster-01.jpg)
+         2. Photograph (fascists-poster-02.jpg)
+         3. Typography (fascists-poster-03.jpg)
+       Zero repetition: Each poster appears once and only once!
+       -------------------------------------------------------------------------- */
+    .poster-moments-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 120px;
+      margin-top: 50px;
+    }
+
+    .poster-moment-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      scroll-margin-top: 100px;
+    }
+
+    .poster-moment-header {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--aaf-border);
+    }
+
+    .poster-moment-number {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--aaf-ink);
+    }
+
+    .poster-moment-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aaf-red);
+      background: var(--aaf-red-tint);
+      border: 1px solid var(--aaf-red-border);
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+
+    .poster-moment-stage {
+      width: 100%;
+      max-width: 820px;
+      background: #000000;
+      border: 1px solid var(--aaf-border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--aaf-shadow-md);
+      position: relative;
+      cursor: zoom-in;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .poster-moment-stage:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .poster-moment-stage img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
+
+    .poster-moment-footer {
+      width: 100%;
+      max-width: 820px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .poster-moment-caption {
+      font-size: 13.5px;
+      color: var(--aaf-ink-muted);
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .poster-moment-dim {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--aaf-ink-faint);
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 3: COLOUR PALETTE DOCUMENTATION
+       -------------------------------------------------------------------------- */
+    .case-section-palette {
+      background: var(--aaf-bg);
+      position: relative;
+    }
+
+    .palette-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: baseline;
+      margin-bottom: 56px;
+    }
+
+    .palette-lead-statement {
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.6;
+      color: var(--aaf-ink);
+      margin: 0;
+    }
+
+    .palette-narrative-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--aaf-ink-muted);
+      margin: 0;
+    }
+
+    /* 5-Swatch Horizontal Grid on Desktop */
+    .palette-swatches-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .palette-swatch {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--aaf-border);
+      border-radius: 6px;
+      padding: 14px;
+      box-sizing: border-box;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease,
+                  opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    .case-section-palette.is-revealed .palette-swatch {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .case-section-palette.is-revealed .palette-swatch:nth-child(1) { transition-delay: 0.05s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(2) { transition-delay: 0.11s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(3) { transition-delay: 0.17s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(4) { transition-delay: 0.23s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(5) { transition-delay: 0.29s; }
+
+    .palette-swatch:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .palette-swatch.swatch-prominent {
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .palette-swatch.swatch-red {
+      border-color: rgba(216, 45, 51, 0.35);
+      box-shadow: 0 10px 30px rgba(216, 45, 51, 0.1);
+    }
+
+    .palette-swatch.swatch-red:hover {
+      border-color: rgba(216, 45, 51, 0.65);
+      box-shadow: 0 14px 36px rgba(216, 45, 51, 0.2);
+    }
+
+    .palette-swatch.swatch-black {
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .palette-swatch.swatch-black:hover {
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .swatch-block {
+      width: 100%;
+      height: 180px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .palette-swatch.swatch-prominent .swatch-block {
+      height: 200px;
+    }
+
+    .swatch-black .swatch-block {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .swatch-info {
+      padding-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+    }
+
+    .swatch-name {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--aaf-ink);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .swatch-prominent .swatch-name {
+      font-size: 15px;
+    }
+
+    .swatch-hex {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--aaf-ink-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 4: CASSETTE INTERPRETATION
+       -------------------------------------------------------------------------- */
+    .cassette-presentation-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 50px;
+      background: #000000;
+      border: 1px solid var(--aaf-border);
+      border-radius: 6px;
+      padding: 60px 48px;
+      box-shadow: var(--aaf-shadow-md);
+    }
+
+    .cassette-front-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cassette-front-frame img {
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.95));
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .cassette-front-frame img:hover {
+      transform: scale(1.02);
+    }
+
+    .cassette-spine-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cassette-spine-frame img {
+      width: auto;
+      max-height: 440px;
+      filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.95));
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .cassette-spine-frame img:hover {
+      transform: scale(1.02);
+    }
+
+    .cassette-label {
+      margin-top: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      text-align: center;
+    }
+
+    .cassette-context-note {
+      margin-top: 36px;
+      padding: 20px 24px;
+      background: var(--aaf-bg-card);
+      border: 1px solid var(--aaf-border);
+      border-radius: 4px;
+      font-size: 14.5px;
+      color: var(--aaf-ink-muted);
+      line-height: 1.7;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 5: PROJECT DETAILS (CLEAN EDITORIAL TABLE)
+       -------------------------------------------------------------------------- */
+    .details-editorial-wrapper {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .details-table-card {
+      background: var(--aaf-bg-card);
+      border: 1px solid var(--aaf-border);
+      border-radius: 6px;
+      padding: 36px 40px;
+      box-shadow: var(--aaf-shadow-sm);
+    }
+
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .details-table tr {
+      border-bottom: 1px solid var(--aaf-border-subtle);
+    }
+
+    .details-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .details-table th {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aaf-ink-faint);
+      padding: 16px 0;
+      text-align: left;
+      width: 150px;
+      vertical-align: top;
+    }
+
+    .details-table td {
+      font-size: 14.5px;
+      color: var(--aaf-ink);
+      padding: 16px 0;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .details-statement-card {
+      background: var(--aaf-bg-card);
+      border: 1px solid var(--aaf-border);
+      border-radius: 6px;
+      padding: 36px 32px;
+      box-shadow: var(--aaf-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .details-statement-title {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--aaf-ink);
+      margin: 0;
+    }
+
+    .details-statement-body {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--aaf-ink-muted);
+      margin: 0;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 6: CLOSING VISUAL MOMENT
+       -------------------------------------------------------------------------- */
+    .closing-moment-container {
+      margin-top: 50px;
+      position: relative;
+      background: radial-gradient(circle at 50% 50%, rgba(216, 45, 51, 0.12) 0%, #000000 70%);
+      border: 1px solid var(--aaf-border);
+      border-radius: 6px;
+      padding: 80px 40px;
+      text-align: center;
+      box-shadow: var(--aaf-shadow-lg);
+    }
+
+    .closing-quote-text {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--aaf-red);
+      max-width: 820px;
+      margin: 0 auto 24px;
+      letter-spacing: 0.04em;
+    }
+
+    .closing-quote-attrib {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aaf-ink-muted);
+      margin-bottom: 40px;
+    }
+
+    .closing-cassette-mini {
+      max-width: 480px;
+      margin: 0 auto;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.95));
+      cursor: zoom-in;
+    }
+
+    .closing-cassette-mini img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* --------------------------------------------------------------------------
+       FOOTER NAVIGATION (RECIPROCAL TRIAD)
+       -------------------------------------------------------------------------- */
+    .case-footer {
+      background: #060606;
+      color: #FFFFFF;
+      padding: 64px 0 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .case-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .footer-nav-link:hover {
+      color: var(--aaf-red);
+      transform: translateX(4px);
+    }
+
+    .footer-nav-prev:hover {
+      transform: translateX(-4px);
+    }
+
+    .footer-nav-center {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--aaf-red);
+      background: var(--aaf-red-tint);
+      border: 1px solid var(--aaf-red-border);
+      padding: 8px 18px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .footer-nav-center:hover {
+      background: var(--aaf-red);
+      color: #FFFFFF;
+      border-color: var(--aaf-red);
+    }
+
+    .footer-credits {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* --------------------------------------------------------------------------
+       LIGHTBOX MODAL
+       -------------------------------------------------------------------------- */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transform: scale(0.96);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox-modal.is-active .lightbox-img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .lightbox-close:hover {
+      background: var(--aaf-red);
+      transform: scale(1.08);
+    }
+
+    /* --------------------------------------------------------------------------
+       RESPONSIVE BREAKPOINTS
+       -------------------------------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .palette-swatches-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .palette-swatch.swatch-prominent .swatch-block {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .palette-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cassette-presentation-grid {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        gap: 36px;
+      }
+
+      .cassette-spine-frame img {
+        max-height: 360px;
+      }
+
+      .details-editorial-wrapper {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .case-nav {
+        padding: 14px 20px;
+      }
+
+      .case-hero {
+        padding: 60px 0 72px;
+      }
+
+      .case-hero-intro-box {
+        padding: 20px 20px;
+      }
+
+      .case-section {
+        padding: 70px 0;
+      }
+
+      .poster-moments-wrapper {
+        gap: 80px;
+      }
+
+      .poster-moment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .poster-moment-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .palette-swatches-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .swatch-block {
+        height: 140px;
+      }
+
+      .palette-swatch.swatch-prominent .swatch-block {
+        height: 140px;
+      }
+
+      .details-table-card {
+        padding: 24px 20px;
+      }
+
+      .details-table th {
+        width: 120px;
+        font-size: 10px;
+      }
+
+      .details-table td {
+        font-size: 13.5px;
+      }
+
+      .case-footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Grain Overlay -->
+  <div class="protest-grain-layer" aria-hidden="true"></div>
+
+  <div class="case-wrapper">
+
+    <!-- Sticky Top Navigation -->
+    <header class="case-nav" role="banner">
+      <div class="case-nav-left">
+        <a href="index.html#graphic-design" class="case-back-link" aria-label="Return to graphic design archive">
+          <span class="arrow-icon" aria-hidden="true">←</span>
+          <span>BACK TO GRAPHIC DESIGN</span>
+        </a>
+      </div>
+      <div class="case-nav-right">
+        <span class="case-nav-brand">NEHA TRIVEDI</span>
+        <span class="case-nav-badge">POSTER SERIES</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- ====================================================================
+           SECTION 1: OPENING / HERO
+           ==================================================================== -->
+      <section class="case-hero" aria-labelledby="hero-title">
+        <div class="case-container">
+          
+          <div class="case-hero-badges">
+            <span class="case-hero-badge-pill">INDEPENDENT PROJECT</span>
+            <span class="case-hero-category-label">DELHI · 2026</span>
+          </div>
+
+          <h1 class="case-hero-title" id="hero-title">ART AGAINST FASCISTS</h1>
+          <p class="case-hero-subtitle">Protest Poster Series & Cassette Artwork</p>
+
+          <div class="case-hero-intro-box">
+            <p class="case-hero-intro-text">
+              In June–July 2026, I independently created these posters in support of the Delhi protest. Artists were expressing their support through their respective art forms. The collective initiative was called "Art Against Fascists". This was an independent artistic contribution in support of the protest, not a commissioned campaign or an official organisational assignment.
+            </p>
+          </div>
+
+          <div class="case-hero-meta-tags">
+            <span><strong>PROJECT:</strong> Art Against Fascists</span>
+            <span><strong>TYPE:</strong> Independent Personal Project</span>
+            <span><strong>LOCATION:</strong> Delhi</span>
+            <span><strong>YEAR:</strong> 2026</span>
+            <span><strong>MEDIUM:</strong> Digital Poster Design</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 2: THE POSTER SERIES
+           ORDER SPECIFIED BY USER:
+             1. Cockroach with red mark (fascists-poster-01.jpg)
+             2. The photograph (fascists-poster-02.jpg)
+             3. The typography (fascists-poster-03.jpg)
+           NO REPEATED POSTERS: Each poster appears once and only once!
+           ==================================================================== -->
+      <section class="case-section case-section-alt" id="poster-series" aria-labelledby="heading-posters">
+        <div class="case-container">
+          
+          <span class="section-eyebrow">01 / Unified Series</span>
+          <h2 class="section-heading" id="heading-posters">The Poster Series</h2>
+          <p class="section-subhead">
+            Three individual visual responses created in solidarity — united by high-contrast monochrome texture, bold political typography, and visceral red mark-making. Each poster is presented individually at full size.
+          </p>
+
+          <div class="poster-moments-wrapper">
+
+            <!-- EDITORIAL MOMENT 1: THE COCKROACH WITH RED MARK -->
+            <article class="poster-moment-item" id="poster-01">
+              <div class="poster-moment-header">
+                <span class="poster-moment-number">POSTER 01</span>
+                <span class="poster-moment-pill">SYMBOLIC TARGETING GRAPHIC</span>
+              </div>
+
+              <div class="poster-moment-stage" tabindex="0" role="button" aria-label="View Poster 01 in high resolution">
+                <img 
+                  src="assets/images/fascists-poster-01.jpg" 
+                  alt="Poster 01: High-contrast monochrome insect illustration with red circular targeting crosshair on weathered texture" 
+                  width="1024" 
+                  height="1024"
+                  loading="lazy">
+              </div>
+
+              <div class="poster-moment-footer">
+                <p class="poster-moment-caption">Detailed high-contrast monochrome insect illustration overlaid with a circular red targeting crosshair upon distressed concrete texture.</p>
+                <span class="poster-moment-dim">1024 × 1024 · DIGITAL POSTER</span>
+              </div>
+            </article>
+
+            <!-- EDITORIAL MOMENT 2: THE PHOTOGRAPH (BHAGAT SINGH) -->
+            <article class="poster-moment-item" id="poster-02">
+              <div class="poster-moment-header">
+                <span class="poster-moment-number">POSTER 02</span>
+                <span class="poster-moment-pill">ARCHIVAL PORTRAIT & STATEMENT</span>
+              </div>
+
+              <div class="poster-moment-stage" tabindex="0" role="button" aria-label="View Poster 02 in high resolution">
+                <img 
+                  src="assets/images/fascists-poster-02.jpg" 
+                  alt="Poster 02: Archival portrait of Bhagat Singh with quote: 'for the deaf to hear, the sound has to be very loud.'" 
+                  width="1024" 
+                  height="1024"
+                  loading="lazy">
+              </div>
+
+              <div class="poster-moment-footer">
+                <p class="poster-moment-caption">Archival photographic portrait of Bhagat Singh centered against rough black canvas with spaced crimson text: "for the deaf to hear, the sound has to be very loud."</p>
+                <span class="poster-moment-dim">1024 × 1024 · DIGITAL POSTER</span>
+              </div>
+            </article>
+
+            <!-- EDITORIAL MOMENT 3: THE TYPOGRAPHY -->
+            <article class="poster-moment-item" id="poster-03">
+              <div class="poster-moment-header">
+                <span class="poster-moment-number">POSTER 03</span>
+                <span class="poster-moment-pill">TYPOGRAPHIC STATEMENT</span>
+              </div>
+
+              <div class="poster-moment-stage" tabindex="0" role="button" aria-label="View Poster 03 in high resolution">
+                <img 
+                  src="assets/images/fascists-poster-03.jpg" 
+                  alt="Poster 03: 'they still sitting 'cause they're spineless' in distressed red typography on black" 
+                  width="1024" 
+                  height="1024"
+                  loading="lazy">
+              </div>
+
+              <div class="poster-moment-footer">
+                <p class="poster-moment-caption">Bold, saturated red typography imprinted on weathered black texture: "they still sitting 'cause they're spineless".</p>
+                <span class="poster-moment-dim">1024 × 1024 · DIGITAL POSTER</span>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 3: COLOUR PALETTE DOCUMENTATION
+           ==================================================================== -->
+      <section class="case-section case-section-palette" id="the-colour-palette" aria-labelledby="heading-palette">
+        <div class="case-container">
+          
+          <span class="section-eyebrow">02 / Colour Identity</span>
+          <h2 class="section-heading" id="heading-palette">THE COLOUR STORY</h2>
+
+          <div class="palette-intro-grid">
+            <p class="palette-lead-statement">
+              A bold contrast of <strong>vintage protest red</strong>, deep black, textured charcoal, archival paper, and <strong>monochrome white</strong> defines the visual identity of the release.
+            </p>
+            <p class="palette-narrative-text">
+              Sampled directly from the protest posters and cassette artwork, these five tones establish the ideological friction and raw urgency of the series. Saturated red and deep pitch-black anchor the visual weight, balanced by newsprint texture and razor-sharp typographic contrast.
+            </p>
+          </div>
+
+          <!-- 5 Swatches Row -->
+          <div class="palette-swatches-row" role="region" aria-label="Official release colour swatches">
+            
+            <!-- Swatch 1: Inquilab Red -->
+            <div class="palette-swatch swatch-prominent swatch-red">
+              <div class="swatch-block" style="background-color: #D82D33;" aria-label="Inquilab Red #D82D33 colour block"></div>
+              <div class="swatch-info">
+                <span class="swatch-name">Inquilab Red</span>
+                <span class="swatch-hex">#D82D33</span>
+              </div>
+            </div>
+
+            <!-- Swatch 2: Deep Black -->
+            <div class="palette-swatch swatch-prominent swatch-black">
+              <div class="swatch-block" style="background-color: #0A0A0A;" aria-label="Deep Black #0A0A0A colour block"></div>
+              <div class="swatch-info">
+                <span class="swatch-name">Deep Black</span>
+                <span class="swatch-hex">#0A0A0A</span>
+              </div>
+            </div>
+
+            <!-- Swatch 3: Distressed Charcoal -->
+            <div class="palette-swatch swatch-charcoal">
+              <div class="swatch-block" style="background-color: #282828;" aria-label="Distressed Charcoal #282828 colour block"></div>
+              <div class="swatch-info">
+                <span class="swatch-name">Distressed Charcoal</span>
+                <span class="swatch-hex">#282828</span>
+              </div>
+            </div>
+
+            <!-- Swatch 4: Archival Newsprint -->
+            <div class="palette-swatch swatch-newsprint">
+              <div class="swatch-block" style="background-color: #DDD5C7;" aria-label="Archival Newsprint #DDD5C7 colour block"></div>
+              <div class="swatch-info">
+                <span class="swatch-name">Archival Newsprint</span>
+                <span class="swatch-hex">#DDD5C7</span>
+              </div>
+            </div>
+
+            <!-- Swatch 5: Monochrome White -->
+            <div class="palette-swatch swatch-white">
+              <div class="swatch-block" style="background-color: #F2F0EB;" aria-label="Monochrome White #F2F0EB colour block"></div>
+              <div class="swatch-info">
+                <span class="swatch-name">Monochrome White</span>
+                <span class="swatch-hex">#F2F0EB</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 4: CASSETTE INTERPRETATION
+           ==================================================================== -->
+      <section class="case-section case-section-alt" id="cassette-adaptation" aria-labelledby="heading-cassette">
+        <div class="case-container">
+          
+          <span class="section-eyebrow">03 / Physical Medium</span>
+          <h2 class="section-heading" id="heading-cassette">Cassette Interpretation</h2>
+          <p class="section-subhead">
+            Translating the protest posters into an archival physical release. The custom cassette features a transparent shell, exposed magnetic reels, and a weathered label titled "Inquilab Zindabad", accompanied by a matching vertical jewel case spine.
+          </p>
+
+          <!-- Cassette Presentation Grid -->
+          <div class="cassette-presentation-grid">
+            
+            <!-- Large Front-Facing Cassette Tape -->
+            <div class="cassette-front-frame">
+              <img 
+                src="assets/images/fascists-front.png" 
+                alt="Custom Inquilab Zindabad Cassette Tape Front-Facing Shell Artwork" 
+                tabindex="0" 
+                role="button" 
+                aria-label="View enlarged front cassette tape">
+              <span class="cassette-label">CASSETTE ARTWORK / INQUILAB ZINDABAD · FRONT SHELL</span>
+            </div>
+
+            <!-- Narrow Vertical Spine in Jewel Case -->
+            <div class="cassette-spine-frame">
+              <img 
+                src="assets/images/fascists-spine.png" 
+                alt="Custom Inquilab Zindabad Cassette Spine in Transparent Jewel Case" 
+                tabindex="0" 
+                role="button" 
+                aria-label="View enlarged cassette spine">
+              <span class="cassette-label">CASSETTE SPINE · JEWEL CASE EDGE</span>
+            </div>
+
+          </div>
+
+          <div class="cassette-context-note">
+            The cassette is an extension of this poster project, not a replacement for the posters. It applies the raised fist icon, bold lowercase red typography, and star motif to a vintage physical audio medium, cementing the series as tactile protest history.
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 5: PROJECT DETAILS
+           ==================================================================== -->
+      <section class="case-section" id="project-details" aria-labelledby="heading-details">
+        <div class="case-container">
+          
+          <span class="section-eyebrow">04 / Documentation</span>
+          <h2 class="section-heading" id="heading-details">Project Details</h2>
+
+          <div class="details-editorial-wrapper">
+            
+            <div class="details-table-card">
+              <table class="details-table">
+                <tbody>
+                  <tr>
+                    <th>PROJECT</th>
+                    <td>Art Against Fascists</td>
+                  </tr>
+                  <tr>
+                    <th>TYPE</th>
+                    <td>Independent personal project</td>
+                  </tr>
+                  <tr>
+                    <th>CONTEXT</th>
+                    <td>Delhi protest, June–July 2026</td>
+                  </tr>
+                  <tr>
+                    <th>MEDIUM</th>
+                    <td>Poster design and cassette artwork</td>
+                  </tr>
+                  <tr>
+                    <th>CONTRIBUTION</th>
+                    <td>Independent artistic expression in support of the protest</td>
+                  </tr>
+                  <tr>
+                    <th>LOCATION</th>
+                    <td>Delhi</td>
+                  </tr>
+                  <tr>
+                    <th>YEAR</th>
+                    <td>2026</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="details-statement-card">
+              <h3 class="details-statement-title">INDEPENDENT SOLIDARITY</h3>
+              <p class="details-statement-body">
+                Created during June–July 2026 in direct artistic response to the Delhi protest. Fellow artists contributed through poetry, performance, music and visual media under the shared banner "Art Against Fascists".
+              </p>
+              <p class="details-statement-body">
+                This project represents a personal, independent artistic contribution in solidarity with the protest, free of commercial commission or organizational hierarchy.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 6: CLOSING VISUAL MOMENT
+           ==================================================================== -->
+      <section class="case-section case-section-alt" id="closing" aria-labelledby="heading-closing">
+        <div class="case-container">
+          
+          <span class="section-eyebrow">05 / Archival Close</span>
+          <h2 class="section-heading" id="heading-closing" style="text-align: center;">Voices Through Art</h2>
+
+          <div class="closing-moment-container">
+            <p class="closing-quote-text">
+              “for the deaf to hear, the sound has to be very loud.”
+            </p>
+            <p class="closing-quote-attrib">
+              Art Against Fascists · Delhi · June–July 2026
+            </p>
+
+            <div class="closing-cassette-mini" tabindex="0" role="button" aria-label="View Inquilab Zindabad Cassette Artifact">
+              <img 
+                src="assets/images/fascists-front.png" 
+                alt="Inquilab Zindabad Cassette Tape" 
+                loading="lazy">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         FOOTER NAVIGATION (RECIPROCAL TRIAD)
+         ==================================================================== -->
+    <footer class="case-footer" role="contentinfo">
+      <div class="case-container">
+        
+        <nav class="case-footer-nav" aria-label="Portfolio Project Navigation">
+          <a href="case-study-i-deserve-to-bleed.html" class="footer-nav-link footer-nav-prev">
+            <span aria-hidden="true">←</span> PREVIOUS: I DESERVE TO BLEED
+          </a>
+          <a href="index.html#graphic-design" class="footer-nav-center">
+            BACK TO GRAPHIC DESIGN
+          </a>
+          <a href="case-study-kabhi-kabhi.html" class="footer-nav-link footer-nav-next">
+            NEXT: KABHI KABHI <span aria-hidden="true">→</span>
+          </a>
+        </nav>
+
+        <div class="footer-credits">
+          <span>Neha Trivedi — Graphic Designer || Aspiring Filmmaker</span>
+          <span>Art Against Fascists · Independent Personal Project · Delhi, 2026</span>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox Modal for Image Expansion -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Preview Modal" tabindex="-1">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image preview">×</button>
+    <img src="" alt="" class="lightbox-img" id="lightbox-img">
+  </div>
+
+  <!-- Interactive Case Study Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Lightbox functionality
+      const modal = document.getElementById('lightbox-modal');
+      const modalImg = document.getElementById('lightbox-img');
+      const closeBtn = document.getElementById('lightbox-close');
+
+      const zoomableElements = document.querySelectorAll(
+        '.poster-moment-stage, .cassette-front-frame img, .cassette-spine-frame img, .closing-cassette-mini img'
+      );
+
+      const openLightbox = (imgSrc, imgAlt) => {
+        modalImg.src = imgSrc;
+        modalImg.alt = imgAlt || 'Enlarged artwork preview';
+        modal.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      };
+
+      const closeLightbox = () => {
+        modal.classList.remove('is-active');
+        document.body.style.overflow = '';
+      };
+
+      zoomableElements.forEach(el => {
+        el.addEventListener('click', () => {
+          const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+          if (img) openLightbox(img.src, img.alt);
+        });
+
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+            if (img) openLightbox(img.src, img.alt);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+          closeLightbox();
+        }
+      });
+
+      // Scroll-triggered entrance animations
+      if ('IntersectionObserver' in window) {
+        // Palette reveal observer
+        const paletteSection = document.getElementById('the-colour-palette');
+        if (paletteSection) {
+          const paletteObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                paletteSection.classList.add('is-revealed');
+                paletteObserver.unobserve(paletteSection);
+              }
+            });
+          }, { threshold: 0.15 });
+          paletteObserver.observe(paletteSection);
+        }
+
+        // Section elements reveal
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.poster-moment-item, .cassette-presentation-grid, .details-editorial-wrapper, .closing-moment-container').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(24px)';
+          el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+          revealObserver.observe(el);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

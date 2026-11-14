@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I DESERVE TO BLEED — Album Cover Redesign | Neha Trivedi</title>
+  
+  <meta name="description" content="Case study for I Deserve to Bleed album cover redesign by Neha Trivedi. A personal reinterpretation of Sushi Soucy's track through distressed textures and raw imagery.">
+  <meta name="author" content="Neha Trivedi">
+  
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts: Inter, Cinzel & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==========================================================================
+       CASE STUDY: I DESERVE TO BLEED — VISCERAL EDITORIAL DESIGN
+       Aesthetic: Atmospheric dark charcoal (#0D0D0D / #141313), ceramic off-white
+       (#F4F0E8), deep arterial red accents (#D62228), tactile printed grain.
+       Layout: Reuses the exact editorial system from Qawwali Ki Baithak.
+       ========================================================================== */
+
+    :root {
+      --b-bg: #0D0D0D;
+      --b-bg-alt: #141313;
+      --b-bg-card: #181717;
+      --b-bg-tile: #F4F0E8;
+      --b-ink: #F5F2EB;
+      --b-ink-muted: #A39E96;
+      --b-ink-faint: #6E6962;
+      --b-red: #D62228;
+      --b-red-hover: #E82930;
+      --b-red-tint: rgba(214, 34, 40, 0.1);
+      --b-red-border: rgba(214, 34, 40, 0.32);
+      --b-border: rgba(255, 255, 255, 0.09);
+      --b-border-subtle: rgba(255, 255, 255, 0.05);
+      --b-max-w: 1040px;
+      --b-wide-w: 1200px;
+      --b-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.45);
+      --b-shadow-md: 0 16px 40px rgba(0, 0, 0, 0.65);
+      --b-shadow-lg: 0 28px 64px rgba(0, 0, 0, 0.85);
+    }
+
+    html, body {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: var(--b-bg) !important;
+      color: var(--b-ink) !important;
+      font-family: var(--font-sans);
+      margin: 0;
+      padding: 0;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Texture Layer */
+    .paper-texture-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.035;
+      background-image: radial-gradient(#F5F2EB 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    .case-wrapper {
+      position: relative;
+      z-index: 2;
+      background-color: var(--b-bg);
+      color: var(--b-ink);
+    }
+
+    /* --------------------------------------------------------------------------
+       1. STICKY TOP NAVIGATION (Identical to Qawwali Ki Baithak layout)
+       -------------------------------------------------------------------------- */
+    .case-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--b-border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .case-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .case-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--b-ink-muted);
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+      outline: none;
+    }
+
+    .case-nav-back:hover {
+      color: var(--b-red);
+      transform: translateX(-3px);
+    }
+
+    .case-nav-back:focus-visible {
+      outline: 2px solid var(--b-red);
+      outline-offset: 4px;
+    }
+
+    .case-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .case-nav-brand {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--b-ink);
+    }
+
+    .case-nav-badge {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--b-red);
+      padding: 3px 9px;
+      border: 1px solid var(--b-red-border);
+      border-radius: 2px;
+      background: var(--b-red-tint);
+    }
+
+    /* --------------------------------------------------------------------------
+       GLOBAL EDITORIAL LAYOUT UTILITIES
+       -------------------------------------------------------------------------- */
+    .case-container {
+      max-width: var(--b-max-w);
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 28px;
+      box-sizing: border-box;
+    }
+
+    .case-container-wide {
+      max-width: var(--b-wide-w);
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 28px;
+      box-sizing: border-box;
+    }
+
+    .case-section {
+      padding: 96px 0;
+      position: relative;
+      border-bottom: 1px solid var(--b-border-subtle);
+    }
+
+    .case-section-alt {
+      background-color: var(--b-bg-alt);
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--b-red);
+      margin-bottom: 14px;
+    }
+
+    .section-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: var(--b-ink);
+      margin: 0 0 24px;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.7;
+      color: var(--b-ink-muted);
+      max-width: 680px;
+      margin: 0 0 48px;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 1: HERO — OPENING (MAIN TILED ALBUM COVER)
+       -------------------------------------------------------------------------- */
+    .case-hero {
+      padding: 72px 0 96px;
+      text-align: center;
+      position: relative;
+    }
+
+    .case-hero-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .case-hero-badge-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--b-red);
+      background: var(--b-red-tint);
+      border: 1px solid var(--b-red-border);
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+
+    .case-hero-category-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--b-ink-faint);
+    }
+
+    .case-hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(38px, 6vw, 76px);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--b-ink);
+      margin: 0 auto 16px;
+      line-height: 1.1;
+      max-width: 900px;
+    }
+
+    .case-hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(14px, 1.6vw, 17px);
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--b-ink-muted);
+      margin-bottom: 36px;
+    }
+
+    .case-hero-intro-text {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.7;
+      color: var(--b-ink);
+      font-style: italic;
+    }
+
+    .case-hero-meta-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 56px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--b-ink-muted);
+    }
+
+    .case-hero-meta-item strong {
+      color: var(--b-ink);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    .case-hero-cover-container {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .case-hero-cover-frame {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #000000;
+      box-shadow: var(--b-shadow-lg);
+      border: 1px solid var(--b-border);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      cursor: zoom-in;
+    }
+
+    .case-hero-cover-frame:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 36px 72px rgba(0, 0, 0, 0.95);
+    }
+
+    .case-hero-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-hero-cover-caption {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--b-ink-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 2: THE CONCEPT (TILED SURFACE & RED MARKS STUDY)
+       -------------------------------------------------------------------------- */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .concept-text-col .lead-quote {
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--b-ink);
+      margin-bottom: 24px;
+    }
+
+    .concept-text-col p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--b-ink-muted);
+      margin-bottom: 20px;
+    }
+
+    .concept-visual-frame {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--b-shadow-md);
+      border: 1px solid var(--b-border);
+      background: #000000;
+      cursor: zoom-in;
+    }
+
+    .concept-visual-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .concept-visual-frame:hover img {
+      transform: scale(1.02);
+    }
+
+    .concept-caption {
+      font-size: 11.5px;
+      color: var(--b-ink-faint);
+      margin-top: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 3: TYPOGRAPHY EXPLORATION
+       -------------------------------------------------------------------------- */
+    .exploration-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .exploration-visual-frame {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--b-shadow-md);
+      border: 1px solid var(--b-border);
+      background: #000000;
+      cursor: zoom-in;
+    }
+
+    .exploration-visual-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .exploration-visual-frame:hover img {
+      transform: scale(1.02);
+    }
+
+    .exploration-text-col h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--b-ink);
+      margin: 0 0 16px;
+    }
+
+    .exploration-text-col p {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--b-ink-muted);
+      margin-bottom: 20px;
+    }
+
+    .exploration-tag-box {
+      border-left: 2px solid var(--b-red);
+      padding-left: 16px;
+      margin-top: 24px;
+      font-size: 13.5px;
+      color: var(--b-ink);
+      font-style: italic;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 4: VISUAL EXPLORATION (DARKER IMAGERY: ROSE ARTWORK)
+       -------------------------------------------------------------------------- */
+    .visual-studies-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .study-card {
+      background: var(--b-bg-card);
+      border: 1px solid var(--b-border);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--b-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .study-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--b-red-border);
+    }
+
+    .study-frame {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #000000;
+      cursor: zoom-in;
+    }
+
+    .study-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .study-card:hover .study-frame img {
+      transform: scale(1.02);
+    }
+
+    .study-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .study-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--b-red);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .study-title {
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--b-ink);
+      margin: 0 0 10px;
+    }
+
+    .study-desc {
+      font-size: 14px;
+      color: var(--b-ink-muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 5: FINAL DESIGN & PHYSICAL CASSETTE ADAPTATION
+       -------------------------------------------------------------------------- */
+    .final-cover-display {
+      max-width: 720px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .final-cover-frame {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--b-shadow-lg);
+      border: 1px solid var(--b-border);
+      background: #000000;
+      cursor: zoom-in;
+      transition: transform 0.4s ease;
+    }
+
+    .final-cover-frame:hover {
+      transform: translateY(-4px);
+    }
+
+    .final-cover-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .final-cover-caption {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--b-ink-muted);
+      letter-spacing: 0.08em;
+      font-style: italic;
+    }
+
+    /* Cassette Presentation (Exact matching Qawwali Ki Baithak layout) */
+    .cassette-presentation-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+      background: #080808;
+      border: 1px solid var(--b-border);
+      padding: 48px 40px;
+      border-radius: 8px;
+      box-shadow: var(--b-shadow-lg);
+      margin-top: 40px;
+      color: #FFFFFF;
+    }
+
+    .cassette-front-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cassette-front-frame img {
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.85));
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .cassette-front-frame img:hover {
+      transform: scale(1.02);
+    }
+
+    .cassette-spine-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cassette-spine-frame img {
+      width: auto;
+      max-height: 440px;
+      filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.9));
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .cassette-spine-frame img:hover {
+      transform: scale(1.02);
+    }
+
+    .cassette-label {
+      margin-top: 16px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* --------------------------------------------------------------------------
+       SECTION 6: PROJECT DETAILS & SPOTIFY RELEASE
+       -------------------------------------------------------------------------- */
+    .details-section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .details-table-card {
+      background: var(--b-bg-card);
+      border: 1px solid var(--b-border);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: var(--b-shadow-sm);
+    }
+
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .details-table tr {
+      border-bottom: 1px solid var(--b-border-subtle);
+    }
+
+    .details-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .details-table th {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--b-ink-faint);
+      padding: 14px 0;
+      text-align: left;
+      width: 140px;
+    }
+
+    .details-table td {
+      font-size: 14.5px;
+      color: var(--b-ink);
+      padding: 14px 0;
+      text-align: left;
+    }
+
+    .spotify-action-card {
+      background: var(--b-bg-card);
+      border: 1px solid var(--b-border);
+      border-radius: 8px;
+      padding: 40px 32px;
+      box-shadow: var(--b-shadow-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+
+    .spotify-track-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--b-red);
+    }
+
+    .spotify-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1DB954;
+      color: #000000;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 40px;
+      box-shadow: 0 8px 24px rgba(29, 185, 84, 0.28);
+      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .spotify-btn:hover {
+      background: #1ed760;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(29, 185, 84, 0.38);
+    }
+
+    .spotify-embed-container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* --------------------------------------------------------------------------
+       FOOTER NAVIGATION (RECIPROCAL TRIAD)
+       -------------------------------------------------------------------------- */
+    .case-footer {
+      background: #080808;
+      color: #FFFFFF;
+      padding: 64px 0 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .case-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .footer-nav-link:hover {
+      color: #FFFFFF;
+      transform: translateX(4px);
+    }
+
+    .footer-nav-prev:hover {
+      transform: translateX(-4px);
+    }
+
+    .footer-nav-center {
+      color: var(--b-red);
+      border: 1px solid var(--b-red-border);
+      padding: 8px 20px;
+      border-radius: 2px;
+      background: var(--b-red-tint);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .footer-nav-center:hover {
+      background: rgba(214, 34, 40, 0.18);
+      border-color: rgba(214, 34, 40, 0.5);
+    }
+
+    .footer-credits {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.05em;
+    }
+
+    /* --------------------------------------------------------------------------
+       LIGHTBOX MODAL
+       -------------------------------------------------------------------------- */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(8, 8, 8, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      box-sizing: border-box;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .lightbox-modal.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 4px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 8px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      color: var(--b-red);
+      transform: scale(1.1);
+    }
+
+    /* --------------------------------------------------------------------------
+       RESPONSIVE BREAKPOINTS (Matching Qawwali Ki Baithak)
+       -------------------------------------------------------------------------- */
+    @media (max-width: 900px) {
+      .concept-grid,
+      .exploration-layout,
+      .visual-studies-grid,
+      .details-section-grid,
+      .cassette-presentation-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .cassette-presentation-grid {
+        padding: 36px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .case-nav {
+        padding: 12px 16px;
+      }
+      .case-nav-brand {
+        display: none;
+      }
+      .case-section {
+        padding: 64px 0;
+      }
+      .case-footer-nav {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .footer-nav-link {
+        justify-content: center;
+      }
+      .footer-credits {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Texture Overlay -->
+  <div class="paper-texture-layer" aria-hidden="true"></div>
+
+  <div class="case-wrapper">
+
+    <!-- Sticky Top Navigation -->
+    <header class="case-nav" role="banner">
+      <div class="case-nav-left">
+        <a href="index.html#graphic-design" class="case-nav-back" aria-label="Return to portfolio cassette shelf">
+          <span aria-hidden="true">←</span> BACK TO GRAPHIC DESIGN
+        </a>
+      </div>
+      <div class="case-nav-right">
+        <span class="case-nav-brand">I DESERVE TO BLEED</span>
+        <span class="case-nav-badge">PERSONAL PROJECT</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- ====================================================================
+           SECTION 1: HERO — OPENING (MAIN TILED COVER ARTWORK)
+           ==================================================================== -->
+      <section class="case-hero" aria-labelledby="case-hero-title">
+        <div class="case-container">
+          
+          <div class="case-hero-meta-row">
+            <span class="case-hero-badge-pill">PERSONAL PROJECT / ALBUM COVER REDESIGN</span>
+            <span class="case-hero-category-label">ALBUM COVER REDESIGN</span>
+          </div>
+
+          <h1 class="case-hero-title hero-title" id="case-hero-title">I DESERVE TO BLEED</h1>
+          <p class="case-hero-subtitle hero-subtitle">SUSHI SOUCY</p>
+
+          <p class="case-hero-intro-text">
+            “A personal reinterpretation of an existing song through distressed textures, expressive typography and unsettling imagery. The project explores the relationship between pain, beauty and visual intensity.”
+          </p>
+
+          <div class="case-hero-meta-tags hero-meta-tags">
+            <span class="case-hero-meta-item"><strong>PROJECT TYPE:</strong> Personal Project</span>
+            <span class="case-hero-meta-item"><strong>CATEGORY:</strong> Album Cover Redesign</span>
+            <span class="case-hero-meta-item"><strong>ORIGINAL WORK:</strong> Cover redesign for “I Deserve to Bleed”</span>
+          </div>
+
+          <!-- Large High-Quality Display of Main Tiled Album Cover Artwork -->
+          <div class="case-hero-cover-container">
+            <div class="case-hero-cover-frame" tabindex="0" role="button" aria-label="View enlarged main tiled album cover">
+              <img 
+                src="assets/images/bleed-tiles.jpg" 
+                alt="I Deserve to Bleed Tiled Album Cover Artwork by Neha Trivedi" 
+                class="case-hero-cover-img hero-cover-img"
+                width="1000" 
+                height="1000"
+                loading="eager">
+            </div>
+            <p class="case-hero-cover-caption">Final Redesigned Album Cover · 1000 × 1000 Master Artwork</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 2: THE CONCEPT
+           ==================================================================== -->
+      <section class="case-section case-section-alt" id="concept" aria-labelledby="heading-concept">
+        <div class="case-container">
+          <span class="section-eyebrow">01 / Concept</span>
+          <h2 class="section-heading" id="heading-concept">The Concept</h2>
+
+          <div class="concept-grid">
+            <div class="concept-text-col">
+              <p class="lead-quote">
+                “The visual direction explores the contrast between something delicate and something disturbing. The tiled surface creates a familiar, almost ordinary setting, while the red marks interrupt its cleanliness and introduce a sense of unease. The typography becomes another expressive element, giving the artwork a raw, personal character.”
+              </p>
+              <p>
+                This personal reinterpretation re-imagines Sushi Soucy's track by grounding visceral emotion in a tangible, domestic space. The clinical ceramic grid acts as a neutral canvas, thrown into sharp psychological friction by the abrupt violence of the crimson marks and handwritten lettering.
+              </p>
+              <p style="font-size: 13.5px; color: var(--b-ink-faint); margin-top: 24px; border-left: 2px solid var(--b-red); padding-left: 14px;">
+                * Note: This is an unofficial personal concept redesign created to explore an alternative visual direction, and is not officially affiliated with or commissioned by the artist.
+              </p>
+            </div>
+
+            <div class="concept-visual-col">
+              <div class="concept-visual-frame" tabindex="0" role="button" aria-label="View tiled cover surface study focusing on marks and typography">
+                <img 
+                  src="assets/images/bleed-tiles.jpg" 
+                  alt="I Deserve to Bleed Tiled Surface Detail" 
+                  width="1000" 
+                  height="1000"
+                  loading="lazy">
+              </div>
+              <p class="concept-caption">Surface Detail · Ceramic Tile Grid, Smeared Red Marks and Expressive Lettering</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 3: TYPOGRAPHY EXPLORATION
+           ==================================================================== -->
+      <section class="case-section" id="typography" aria-labelledby="heading-typography">
+        <div class="case-container">
+          <span class="section-eyebrow">02 / Typography</span>
+          <h2 class="section-heading" id="heading-typography">Typography Exploration</h2>
+          <p class="section-subhead">
+            Investigating raw, expressive lettering and its psychological contrast with tactile surfaces.
+          </p>
+
+          <div class="exploration-layout">
+            <div class="exploration-visual-frame" tabindex="0" role="button" aria-label="View crumpled paper typography artwork">
+              <img 
+                src="assets/images/bleed-typography.jpg" 
+                alt="I Deserve to Bleed Typographic Exploration on Crumpled Paper" 
+                width="1024" 
+                height="1024"
+                loading="lazy">
+            </div>
+
+            <div class="exploration-text-col">
+              <h3>Expressive Weight and Surface Decay</h3>
+              <p>
+                Typography plays a decisive role in shaping the emotional identity of the redesign. Against the calculated order of the tiled cover, the handwritten red lettering creates an immediate, visceral human presence — as if scrawled in an urgent, unedited moment.
+              </p>
+              <p>
+                In this separate typographic study, heavy ultra-condensed letterforms are pressed into wrinkled, aged paper. The physical creases, stains, and isolated crimson droplet at the lower corner examine how unyielding typographic mass interacts with the fragile vulnerability of decaying paper.
+              </p>
+              <div class="exploration-tag-box">
+                Supporting design exploration · Investigating physical weight, distressed paper textures and typographic tension.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 4: VISUAL EXPLORATION (DARKER IMAGERY)
+           ==================================================================== -->
+      <section class="case-section case-section-alt" id="visual-exploration" aria-labelledby="heading-exploration">
+        <div class="case-container">
+          <span class="section-eyebrow">03 / Exploration</span>
+          <h2 class="section-heading" id="heading-exploration">Visual Exploration</h2>
+          <p class="section-subhead">
+            Extending the project's visual direction into darker imagery, rich crimson pigments and high-contrast shadow studies.
+          </p>
+
+          <div class="visual-studies-grid">
+            
+            <!-- Study 1: Rose Artwork -->
+            <div class="study-card">
+              <div class="study-frame" tabindex="0" role="button" aria-label="View red and white rose artwork study">
+                <img 
+                  src="assets/images/bleed-cover.jpg" 
+                  alt="I Deserve to Bleed Crimson and White Rose Artwork Study" 
+                  loading="lazy">
+              </div>
+              <div class="study-body">
+                <span class="study-tag">SUPPORTING VISUAL EXPLORATION</span>
+                <h3 class="study-title">Crimson Rose & Void Study</h3>
+                <p class="study-desc">
+                  A supporting visual exploration developing the project's darker atmosphere, deep colour palette and emotional intensity. Blooming white petals emerge from a pitch-black void, washed in saturated blood splatter and dripping crimson ink.
+                </p>
+              </div>
+            </div>
+
+            <!-- Study 2: High-Contrast Photographic Study -->
+            <div class="study-card">
+              <div class="study-frame" tabindex="0" role="button" aria-label="View high-contrast monochrome photographic study">
+                <img 
+                  src="assets/images/bleed-hand.jpg" 
+                  alt="High-Contrast Monochrome Photographic Arm Study" 
+                  loading="lazy">
+              </div>
+              <div class="study-body">
+                <span class="study-tag">ARCHIVAL SHADOW STUDY</span>
+                <h3 class="study-title">High-Contrast Monochrome</h3>
+                <p class="study-desc">
+                  Companion photographic investigation exploring raw thresholding, high-contrast shadows and tactile paper tooth. Examines how monochrome harshness complements the visceral red mark-making of the release.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 5: FINAL DESIGN & CASSETTE ADAPTATION
+           ==================================================================== -->
+      <section class="case-section" id="final-design" aria-labelledby="heading-final">
+        <div class="case-container">
+          <span class="section-eyebrow">04 / Final Release</span>
+          <h2 class="section-heading" id="heading-final">Final Design & Physical Format</h2>
+          <p class="section-subhead">
+            The complete visual identity presented as digital cover artwork and translated into physical cassette tape packaging.
+          </p>
+
+          <!-- Large Presentation of Final Tiled Cover Artwork -->
+          <div class="final-cover-display">
+            <div class="final-cover-frame" tabindex="0" role="button" aria-label="View final album cover redesign">
+              <img 
+                src="assets/images/bleed-tiles.jpg" 
+                alt="Final Album Cover Redesign — Tiled Artwork by Neha Trivedi" 
+                width="1000" 
+                height="1000"
+                loading="lazy">
+            </div>
+            <p class="final-cover-caption">Final album cover redesign — personal interpretation.</p>
+          </div>
+
+          <!-- Physical Cassette Presentation Grid -->
+          <div class="cassette-presentation-grid">
+            
+            <!-- Large Front-Facing Cassette Tape -->
+            <div class="cassette-front-frame">
+              <img 
+                src="assets/images/bleed-front.png" 
+                alt="Custom I Deserve to Bleed Cassette Tape Front-Facing Artwork" 
+                tabindex="0" 
+                role="button" 
+                aria-label="View enlarged front cassette tape">
+              <span class="cassette-label">Custom Cassette Tape · Front Shell & Rose Label</span>
+            </div>
+
+            <!-- Narrow Vertical Spine in Jewel Case -->
+            <div class="cassette-spine-frame">
+              <img 
+                src="assets/images/bleed-spine.png" 
+                alt="Custom I Deserve to Bleed Cassette Spine in Jewel Case" 
+                tabindex="0" 
+                role="button" 
+                aria-label="View enlarged cassette spine">
+              <span class="cassette-label">Cassette Spine · Case Edge with Rose Medallion</span>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 6: PROJECT DETAILS & SPOTIFY RELEASE
+           ==================================================================== -->
+      <section class="case-section case-section-alt" id="details" aria-labelledby="heading-details">
+        <div class="case-container">
+          <span class="section-eyebrow">05 / Details</span>
+          <h2 class="section-heading" id="heading-details">Project Details</h2>
+
+          <div class="details-section-grid">
+            
+            <div class="details-table-card">
+              <table class="details-table">
+                <tbody>
+                  <tr>
+                    <th>PROJECT</th>
+                    <td>I Deserve to Bleed</td>
+                  </tr>
+                  <tr>
+                    <th>TYPE</th>
+                    <td>Personal Project (Unofficial Redesign)</td>
+                  </tr>
+                  <tr>
+                    <th>CATEGORY</th>
+                    <td>Album Cover Redesign</td>
+                  </tr>
+                  <tr>
+                    <th>FORMAT</th>
+                    <td>Digital Album Artwork & Cassette</td>
+                  </tr>
+                  <tr>
+                    <th>ORIGINAL WORK</th>
+                    <td>Existing song by Sushi Soucy</td>
+                  </tr>
+                  <tr>
+                    <th>ROLE</th>
+                    <td>Cover Artwork, Typography and Visual Direction</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="spotify-action-card">
+              <span class="spotify-track-badge">ORIGINAL RELEASE</span>
+              
+              <a 
+                href="https://open.spotify.com/track/27cw0tNJKQQW2CJMGcCfZb" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="spotify-btn"
+                aria-label="Listen to the track I Deserve to Bleed on Spotify">
+                LISTEN TO THE TRACK <span class="arrow-glyph" aria-hidden="true">↗</span>
+              </a>
+
+              <div class="spotify-embed-container">
+                <iframe 
+                  style="border-radius:12px; border:none;" 
+                  src="https://open.spotify.com/embed/track/27cw0tNJKQQW2CJMGcCfZb?utm_source=generator&theme=0" 
+                  width="100%" 
+                  height="152" 
+                  allowfullscreen="" 
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  loading="lazy"
+                  title="I Deserve to Bleed by Sushi Soucy on Spotify">
+                </iframe>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         FOOTER NAVIGATION (RECIPROCAL TRIAD)
+         ==================================================================== -->
+    <footer class="case-footer" role="contentinfo">
+      <div class="case-container">
+        
+        <nav class="case-footer-nav" aria-label="Portfolio Project Navigation">
+          <a href="case-study-qawwali-ki-baithak.html" class="footer-nav-link footer-nav-prev">
+            <span aria-hidden="true">←</span> PREVIOUS: QAWWALI KI BAITHAK
+          </a>
+          <a href="index.html#graphic-design" class="footer-nav-center">
+            BACK TO GRAPHIC DESIGN
+          </a>
+          <a href="case-study-art-against-fascists.html" class="footer-nav-link footer-nav-next">
+            NEXT: ART AGAINST FASCISTS <span aria-hidden="true">→</span>
+          </a>
+        </nav>
+
+        <div class="footer-credits">
+          <span>Neha Trivedi — Graphic Designer || Aspiring Filmmaker</span>
+          <span>I Deserve to Bleed · Personal Project</span>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox Modal for Image Expansion -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Preview Modal" tabindex="-1">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image preview">×</button>
+    <img src="" alt="" class="lightbox-img" id="lightbox-img">
+  </div>
+
+  <!-- Interactive Case Study Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Lightbox Functionality
+      const lightbox = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      const openLightbox = (src, alt) => {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || 'Enlarged artwork view';
+        lightbox.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-active');
+        document.body.style.overflow = '';
+      };
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-active')) {
+          closeLightbox();
+        }
+      });
+
+      // Attach click-to-enlarge to clickable frames and gallery items
+      const clickables = document.querySelectorAll(
+        '.case-hero-cover-frame, .concept-visual-frame, .exploration-visual-frame, .study-frame, .final-cover-frame, .cassette-presentation-grid img'
+      );
+
+      clickables.forEach(item => {
+        const img = item.tagName === 'IMG' ? item : item.querySelector('img');
+        if (!img) return;
+
+        const trigger = item;
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          openLightbox(img.src, img.alt);
+        });
+
+        trigger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+          }
+        });
+      });
+
+      // 2. IntersectionObserver for Entrance Animation
+      if ('IntersectionObserver' in window) {
+        const sections = document.querySelectorAll('.case-section, .case-hero');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        sections.forEach(sec => {
+          sec.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+          sec.style.opacity = '0.94';
+          sec.style.transform = 'translateY(12px)';
+          observer.observe(sec);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

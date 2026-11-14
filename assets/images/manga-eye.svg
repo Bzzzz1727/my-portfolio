@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="500" height="320" aria-label="Original unsettling manga illustrated eye motif" role="img">
+  <defs>
+    <!-- Capillary Red Veins Pattern / Filter -->
+    <filter id="inkGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"/>
+      <feComposite in2="SourceGraphic" in="glitch" operator="over"/>
+    </filter>
+  </defs>
+
+  <g id="mangaEyeGroup" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Heavy Double Eyelid / Crease with Dense Cross-Hatching -->
+    <!-- Upper Crease -->
+    <path d="M40,110 Q250,30 460,110" fill="none" stroke="#F4F0E8" stroke-width="2.5"/>
+    <path d="M50,118 Q250,42 450,118" fill="none" stroke="#B51220" stroke-width="1.2" opacity="0.8"/>
+    
+    <!-- Upper Eyelid Hatch Shading -->
+    <g stroke="#F4F0E8" stroke-width="0.8" opacity="0.6">
+      <line x1="120" y1="88" x2="115" y2="105"/>
+      <line x1="140" y1="78" x2="135" y2="100"/>
+      <line x1="160" y1="70" x2="155" y2="95"/>
+      <line x1="180" y1="64" x2="175" y2="92"/>
+      <line x1="200" y1="58" x2="195" y2="90"/>
+      <line x1="220" y1="54" x2="215" y2="88"/>
+      <line x1="240" y1="52" x2="238" y2="87"/>
+      <line x1="260" y1="52" x2="262" y2="87"/>
+      <line x1="280" y1="54" x2="285" y2="88"/>
+      <line x1="300" y1="58" x2="305" y2="90"/>
+      <line x1="320" y1="64" x2="325" y2="92"/>
+      <line x1="340" y1="70" x2="345" y2="95"/>
+      <line x1="360" y1="78" x2="365" y2="100"/>
+      <line x1="380" y1="88" x2="385" y2="105"/>
+    </g>
+
+    <!-- Main Eye Contour (Thick Ink Line) -->
+    <!-- Sclera Base Fill (Aged Paper Ivory) -->
+    <path d="M50,160 Q250,60 450,160 Q250,260 50,160 Z" fill="#F4F0E8" stroke="#121212" stroke-width="4"/>
+
+    <!-- Red Capillary Veins in Sclera (Left & Right) -->
+    <g stroke="#B51220" stroke-width="1.2" fill="none" opacity="0.75">
+      <!-- Left Veins -->
+      <path d="M60,160 Q90,155 120,158 T150,152"/>
+      <path d="M80,162 Q105,170 135,166"/>
+      <path d="M70,158 Q100,148 130,146"/>
+      <!-- Right Veins -->
+      <path d="M440,160 Q410,155 375,158 T345,153"/>
+      <path d="M420,162 Q395,170 365,166"/>
+      <path d="M430,158 Q400,148 370,147"/>
+    </g>
+
+    <!-- Iris (Layered Striations & Ink Texture) -->
+    <g id="eyeIris" transform="translate(250, 160)">
+      <!-- Outer Iris Ring -->
+      <circle cx="0" cy="0" r="64" fill="#0A0A0A" stroke="#121212" stroke-width="3"/>
+      
+      <!-- Iris Inking Radiating Spikes -->
+      <g stroke="#F4F0E8" stroke-width="1.2" opacity="0.8">
+        <line x1="0" y1="-62" x2="0" y2="-45"/>
+        <line x1="24" y1="-57" x2="16" y2="-40"/>
+        <line x1="44" y1="-44" x2="30" y2="-32"/>
+        <line x1="57" y1="-24" x2="40" y2="-16"/>
+        <line x1="62" y1="0" x2="45" y2="0"/>
+        <line x1="57" y1="24" x2="40" y2="16"/>
+        <line x1="44" y1="44" x2="30" y2="32"/>
+        <line x1="24" y1="57" x2="16" y2="40"/>
+        <line x1="0" y1="62" x2="0" y2="45"/>
+        <line x1="-24" y1="57" x2="-16" y2="40"/>
+        <line x1="-44" y1="44" x2="-30" y2="32"/>
+        <line x1="-57" y1="24" x2="-40" y2="16"/>
+        <line x1="-62" y1="0" x2="-45" y2="0"/>
+        <line x1="-57" y1="-24" x2="-40" y2="-16"/>
+        <line x1="-44" y1="-44" x2="-30" y2="-32"/>
+        <line x1="-24" y1="-57" x2="-16" y2="-40"/>
+      </g>
+
+      <!-- Blood Red Inner Iris Ring -->
+      <circle cx="0" cy="0" r="38" fill="none" stroke="#B51220" stroke-width="2.5" opacity="0.9"/>
+
+      <!-- Spiral Pupil (Deep Void Center) -->
+      <path d="M0,0 
+        C4,-2 8,-7 6,-12 
+        C3,-18 -8,-20 -15,-15 
+        C-25,-8 -26,8 -18,18 
+        C-6,30 14,32 28,22 
+        C45,10 48,-14 34,-32" 
+        stroke="#F4F0E8" stroke-width="1.8" fill="none"/>
+      
+      <!-- Pupil Void -->
+      <circle cx="0" cy="0" r="14" fill="#0A0A0A" stroke="#B51220" stroke-width="1.5"/>
+
+      <!-- Specular Highlight / Stark Catchlight -->
+      <circle cx="-16" cy="-16" r="6" fill="#F4F0E8"/>
+      <circle cx="-10" cy="-22" r="2.5" fill="#F4F0E8"/>
+    </g>
+
+    <!-- Heavy Upper Eyelash Margin (Solid Black Ink Stroke) -->
+    <path d="M45,160 Q250,55 455,160 Q250,85 45,160 Z" fill="#0A0A0A"/>
+
+    <!-- Lower Eyelash & Under-Eye Fatigue Lines -->
+    <path d="M70,185 Q250,285 430,185" fill="none" stroke="#F4F0E8" stroke-width="1.5" opacity="0.7"/>
+    <path d="M90,205 Q250,305 410,205" fill="none" stroke="#B51220" stroke-width="0.8" opacity="0.6"/>
+
+    <!-- Under-eye Hatching -->
+    <g stroke="#F4F0E8" stroke-width="0.75" opacity="0.45">
+      <line x1="160" y1="210" x2="165" y2="230"/>
+      <line x1="180" y1="220" x2="185" y2="242"/>
+      <line x1="200" y1="230" x2="205" y2="252"/>
+      <line x1="220" y1="236" x2="225" y2="258"/>
+      <line x1="240" y1="240" x2="243" y2="262"/>
+      <line x1="260" y1="240" x2="258" y2="262"/>
+      <line x1="280" y1="236" x2="275" y2="258"/>
+      <line x1="300" y1="230" x2="295" y2="252"/>
+      <line x1="320" y1="220" x2="315" y2="242"/>
+      <line x1="340" y1="210" x2="335" y2="230"/>
+    </g>
+  </g>
+</svg>

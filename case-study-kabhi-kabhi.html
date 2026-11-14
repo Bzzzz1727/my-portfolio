@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KABHI KABHI — Album Cover Artwork | Neha Trivedi</title>
+  
+  <meta name="description" content="Case study for Kabhi Kabhi album cover artwork by Neha Trivedi. Client project for Reydor. Creative Direction, Art Direction & Album Cover Design.">
+  <meta name="author" content="Neha Trivedi">
+  
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts & Custom Font Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
+  <!-- Core Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==========================================================================
+       CASE STUDY: KABHI KABHI — EDITORIAL DESIGN SYSTEM
+       Aesthetic: Black background (#000000 / #080808), white typography,
+       deep-red accents (#B51220), subtle distressed textures, generous space.
+       ========================================================================== */
+
+    :root {
+      --case-max-w: 1040px;
+      --case-wide-w: 1200px;
+      --case-border: rgba(255, 255, 255, 0.08);
+      --case-border-hover: rgba(255, 255, 255, 0.18);
+      --case-text-muted: rgba(255, 255, 255, 0.68);
+      --case-text-faint: rgba(255, 255, 255, 0.42);
+      --case-panel-bg: rgba(255, 255, 255, 0.02);
+      --case-bg-dark: #080808;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Page Canvas */
+    .case-page {
+      background-color: var(--ink-black);
+      color: var(--paper-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* --------------------------------------------------------------------------
+       1. STICKY TOP NAVIGATION
+       -------------------------------------------------------------------------- */
+    .case-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--case-border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.3s ease;
+    }
+
+    .case-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .case-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+      outline: none;
+    }
+
+    .case-nav-back:hover {
+      color: var(--blood-red);
+      transform: translateX(-3px);
+    }
+
+    .case-nav-back:focus-visible {
+      color: var(--blood-red);
+      outline: 2px solid var(--blood-red);
+      outline-offset: 4px;
+    }
+
+    .case-nav-back .back-arrow {
+      font-family: system-ui, sans-serif;
+      transition: transform 0.25s ease;
+    }
+
+    .case-nav-back:hover .back-arrow {
+      transform: translateX(-2px);
+    }
+
+    .case-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .case-nav-brand {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+    }
+
+    .case-nav-badge {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blood-red);
+      padding: 3px 8px;
+      border: 1px solid rgba(181, 18, 32, 0.4);
+      border-radius: 2px;
+      background: rgba(181, 18, 32, 0.08);
+    }
+
+    /* --------------------------------------------------------------------------
+       2. HERO SECTION — ORIGINAL SQUARE ALBUM COVER PRESENTATION
+       -------------------------------------------------------------------------- */
+    .case-hero {
+      padding: 64px 24px 72px;
+      max-width: var(--case-wide-w);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .case-hero-pre {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blood-red);
+      margin-bottom: 16px;
+    }
+
+    .case-hero-title {
+      font-family: var(--font-sans);
+      font-size: clamp(44px, 7.5vw, 88px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+      margin: 0 0 16px;
+      line-height: 1.02;
+    }
+
+    .case-hero-artist {
+      font-family: var(--font-sans);
+      font-size: clamp(14px, 2vw, 17px);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 0 8px;
+    }
+
+    .case-hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--case-text-muted);
+      margin: 0 0 44px;
+    }
+
+    /* Hero Artwork Centerpiece (Original Square Album Cover) */
+    .case-hero-artwork-wrap {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+
+    .case-hero-artwork-frame.square-cover-frame {
+      position: relative;
+      background: radial-gradient(ellipse at center, rgba(181, 18, 32, 0.14) 0%, rgba(0, 0, 0, 0.98) 75%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(181, 18, 32, 0.2);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .case-hero-artwork-frame.square-cover-frame:hover {
+      border-color: rgba(181, 18, 32, 0.45);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.98), 0 0 60px rgba(181, 18, 32, 0.3);
+    }
+
+    .case-hero-cover-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      display: block;
+      filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.95));
+      border-radius: 3px;
+      object-fit: cover;
+    }
+
+    /* Small Project Info Strip */
+    .case-hero-meta-strip {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      border-top: 1px solid var(--case-border);
+      border-bottom: 1px solid var(--case-border);
+      padding: 24px 0;
+      text-align: left;
+    }
+
+    .meta-strip-col {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .meta-strip-label {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--case-text-faint);
+    }
+
+    .meta-strip-value {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--paper-white);
+      letter-spacing: 0.02em;
+      line-height: 1.35;
+    }
+
+    /* Subtle Scroll Indicator */
+    .case-scroll-prompt {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--case-text-faint);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .case-scroll-prompt:hover {
+      color: var(--paper-white);
+    }
+
+    .scroll-prompt-text {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-prompt-line {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--case-text-faint), transparent);
+      animation: pulseLine 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseLine {
+      0%, 100% { transform: scaleY(0.7); opacity: 0.4; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    /* --------------------------------------------------------------------------
+       3. CASE STUDY BODY & COMMON SECTION STYLES
+       -------------------------------------------------------------------------- */
+    .case-main {
+      width: 100%;
+      flex: 1;
+    }
+
+    .case-section {
+      padding: 88px 24px;
+      border-top: 1px solid var(--case-border);
+      position: relative;
+    }
+
+    .case-content-container {
+      max-width: var(--case-max-w);
+      margin: 0 auto;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .relative-z {
+      position: relative;
+      z-index: 5;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blood-red);
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-family: var(--font-sans);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+      margin: 0 0 36px;
+      line-height: 1.12;
+    }
+
+    /* Two-Column Editorial Narrative Grid */
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .lead-statement {
+      font-family: var(--font-sans);
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--paper-white);
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    .lead-statement strong {
+      color: var(--paper-white);
+      font-weight: 700;
+    }
+
+    .narrative-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .case-p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--case-text-muted);
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .case-p strong {
+      color: var(--paper-white);
+      font-weight: 600;
+    }
+
+    /* --------------------------------------------------------------------------
+       4. SECTION C: CREATIVE DIRECTION — RAGE OF LOVE
+       -------------------------------------------------------------------------- */
+    .concept-showcase {
+      margin-top: 52px;
+      background: radial-gradient(circle at 50% 50%, rgba(181, 18, 32, 0.06) 0%, rgba(0, 0, 0, 0.98) 75%);
+      border: 1px solid var(--case-border);
+      border-radius: 6px;
+      padding: clamp(32px, 4vw, 56px);
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .concept-cover-view {
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .concept-cover-view img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      display: block;
+      border-radius: 4px;
+      filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .concept-cassette-views {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .concept-front-view {
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .concept-front-view img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.9));
+    }
+
+    .concept-spine-view {
+      width: 54px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .concept-spine-view img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.9));
+    }
+
+    .concept-caption {
+      margin-top: 22px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--case-text-faint);
+      text-align: center;
+    }
+
+    /* --------------------------------------------------------------------------
+       4.1 SECTION: THE COLOUR STORY (PALETTE DOCUMENTATION)
+       - Horizontal row of five large clean swatches on desktop
+       - Compact responsive grid on mobile
+       - Prominent Vintage Red (#D82D33) and Deep Black (#121212)
+       - Clean typography and generous spacing
+       - Subtle scroll-triggered entrance animation
+       - Minimal, editorial, consistent with portfolio aesthetic
+       -------------------------------------------------------------------------- */
+    .case-section-palette {
+      background: var(--case-bg-dark, #080808);
+      position: relative;
+    }
+
+    .palette-intro-grid {
+      margin-bottom: 56px;
+    }
+
+    /* Horizontal row of 5 swatches on desktop */
+    .palette-swatches-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .palette-swatch {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--case-border);
+      border-radius: 6px;
+      padding: 14px;
+      box-sizing: border-box;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease,
+                  opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    /* Subtle scroll-triggered entrance animation */
+    .case-section-palette.is-revealed .palette-swatch {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .case-section-palette.is-revealed .palette-swatch:nth-child(1) { transition-delay: 0.04s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(2) { transition-delay: 0.10s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(3) { transition-delay: 0.16s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(4) { transition-delay: 0.22s; }
+    .case-section-palette.is-revealed .palette-swatch:nth-child(5) { transition-delay: 0.28s; }
+
+    .palette-swatch:hover {
+      transform: translateY(-3px);
+      border-color: var(--case-border-hover);
+    }
+
+    /* Prominent Red and Black Swatches */
+    .palette-swatch.swatch-prominent {
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .palette-swatch.swatch-red {
+      border-color: rgba(216, 45, 51, 0.35);
+      box-shadow: 0 10px 30px rgba(216, 45, 51, 0.08);
+    }
+
+    .palette-swatch.swatch-red:hover {
+      border-color: rgba(216, 45, 51, 0.65);
+      box-shadow: 0 14px 36px rgba(216, 45, 51, 0.18);
+    }
+
+    .palette-swatch.swatch-black {
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .palette-swatch.swatch-black:hover {
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    /* Large clean swatch block */
+    .swatch-block {
+      width: 100%;
+      height: 180px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Prominent swatches get slightly taller height for visual hierarchy */
+    .palette-swatch.swatch-prominent .swatch-block {
+      height: 200px;
+    }
+
+    /* Crisp boundary for Deep Black swatch block against dark background */
+    .swatch-black .swatch-block {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Swatch metadata beneath block */
+    .swatch-info {
+      padding-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+    }
+
+    .swatch-name {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--paper-white);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .swatch-prominent .swatch-name {
+      font-size: 15px;
+    }
+
+    .swatch-hex {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--case-text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .swatch-prominent .swatch-hex {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* --------------------------------------------------------------------------
+       5. SECTION D: THE DESIGN — FROM IDEA TO ARTWORK (DETAIL STUDIES)
+       -------------------------------------------------------------------------- */
+    .details-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .detail-card {
+      background: var(--case-panel-bg);
+      border: 1px solid var(--case-border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--case-border-hover);
+    }
+
+    .detail-img-wrap {
+      width: 100%;
+      height: 230px;
+      background: #0d0d0d;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--case-border);
+    }
+
+    .detail-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .detail-card:hover .detail-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .detail-content {
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .detail-tag {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blood-red);
+      margin-bottom: 8px;
+    }
+
+    .detail-title {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--paper-white);
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .detail-desc {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--case-text-muted);
+      margin: 0;
+    }
+
+    /* --------------------------------------------------------------------------
+       6. SECTION E: MY ROLE — WHAT I DID
+       -------------------------------------------------------------------------- */
+    .role-list {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .role-item {
+      background: var(--case-panel-bg);
+      border: 1px solid var(--case-border);
+      border-radius: 4px;
+      padding: 28px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: border-color 0.25s ease;
+    }
+
+    .role-item:hover {
+      border-color: var(--case-border-hover);
+    }
+
+    .role-number {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blood-red);
+      letter-spacing: 0.12em;
+      padding-top: 2px;
+    }
+
+    .role-text-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .role-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--paper-white);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+
+    .role-desc {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--case-text-muted);
+      margin: 0;
+    }
+
+    /* --------------------------------------------------------------------------
+       7. SECTION F: DIGITAL RELEASE PRESENTATION (THE RELEASE)
+       - Nearly black background (#080808)
+       - Subtle distressed textures: faint vintage grain, soft dark-red floral edges
+       - Subtle red radial glow behind complete uncropped phone mockup
+       - Desktop: slightly off-center phone; Mobile: centered and responsive
+       - Functional LISTEN ON SPOTIFY button & preserved official Spotify player
+       ========================================================================== */
+    .case-section-release {
+      background-color: var(--case-bg-dark);
+      position: relative;
+      overflow: hidden;
+      contain: paint;
+      padding: 96px 24px 104px;
+      border-top: 1px solid rgba(181, 18, 32, 0.2);
+    }
+
+    /* Ambient Textures Layer */
+    .release-backdrop-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+      contain: paint;
+    }
+
+    .release-organic-edge {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .release-organic-edge.top-left {
+      top: -120px;
+      left: -120px;
+      width: 440px;
+      height: 440px;
+      background: radial-gradient(circle, rgba(181, 18, 32, 0.16) 0%, rgba(181, 18, 32, 0.04) 55%, transparent 75%);
+    }
+
+    .release-organic-edge.bottom-right {
+      bottom: -140px;
+      right: -140px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(181, 18, 32, 0.14) 0%, rgba(181, 18, 32, 0.03) 60%, transparent 75%);
+    }
+
+    /* Very faint vintage grain */
+    .release-vintage-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: radial-gradient(#fff 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+
+    .release-lead-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(16px, 2vw, 19px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.78);
+      margin: -20px 0 52px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Release Stage Grid: Desktop off-center composition */
+    .release-stage-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    /* Phone Mockup Column */
+    .release-phone-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      perspective: 1200px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .case-section-release.is-revealed .release-phone-col {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .release-phone-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Subtle Red Radial Glow behind the Phone */
+    .release-phone-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 360px;
+      height: 520px;
+      background: radial-gradient(ellipse at center, rgba(181, 18, 32, 0.32) 0%, rgba(181, 18, 32, 0.08) 55%, transparent 75%);
+      filter: blur(40px);
+      border-radius: 50%;
+      animation: glowPulse 8s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        opacity: 0.65;
+        transform: translate(-50%, -50%) scale(0.96);
+      }
+      50% {
+        opacity: 0.95;
+        transform: translate(-50%, -50%) scale(1.06);
+      }
+    }
+
+    /* Floating Phone Wrapper */
+    .release-phone-wrapper {
+      position: relative;
+      z-index: 2;
+      animation: phoneFloat 6s infinite ease-in-out;
+      transform-style: preserve-3d;
+      will-change: transform;
+      max-width: 370px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    @keyframes phoneFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Complete Uncropped Phone Mockup Image */
+    .release-phone-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 24px rgba(181, 18, 32, 0.2));
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center center;
+    }
+
+    /* Supporting Information Column */
+    .release-info-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.16s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.16s;
+    }
+
+    .case-section-release.is-revealed .release-info-col {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .release-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blood-red);
+      margin-bottom: 8px;
+    }
+
+    .release-title {
+      font-family: var(--font-sans);
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+      margin: 0 0 8px;
+      line-height: 1.05;
+    }
+
+    .release-artist {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 0 14px;
+    }
+
+    .release-copy {
+      font-family: var(--font-sans);
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--case-text-muted);
+      margin: 0;
+      max-width: 440px;
+    }
+
+    /* Original Cover Companion Card (High-clarity independent square view) */
+    .release-cover-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--case-border);
+      border-radius: 6px;
+      padding: 16px 20px;
+      width: 100%;
+      max-width: 440px;
+      box-sizing: border-box;
+      transition: border-color 0.25s ease;
+    }
+
+    .release-cover-card:hover {
+      border-color: rgba(181, 18, 32, 0.35);
+    }
+
+    .release-cover-frame {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .release-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .release-cover-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cover-meta-label {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--paper-white);
+      letter-spacing: 0.02em;
+    }
+
+    .cover-meta-dim {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--case-text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Functional Button: LISTEN ON SPOTIFY */
+    .release-action-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .spotify-release-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--paper-white);
+      background: rgba(181, 18, 32, 0.2);
+      border: 1px solid var(--blood-red);
+      padding: 14px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .spotify-release-btn:hover {
+      background: var(--blood-red);
+      color: var(--paper-white);
+      box-shadow: 0 6px 24px rgba(181, 18, 32, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .spotify-release-btn:focus-visible {
+      outline: 2px solid var(--paper-white);
+      outline-offset: 3px;
+    }
+
+    .spotify-release-btn .arrow-glyph {
+      font-family: system-ui, sans-serif;
+      transition: transform 0.25s ease;
+    }
+
+    .spotify-release-btn:hover .arrow-glyph {
+      transform: translate(2px, -2px);
+    }
+
+    .release-note {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      color: var(--case-text-faint);
+      letter-spacing: 0.04em;
+    }
+
+    /* Preserved Official Spotify Embed Player */
+    .release-player-embed-wrap {
+      max-width: 780px;
+      width: 100%;
+      margin: 40px auto 0;
+    }
+
+    .spotify-embed-container {
+      width: 100%;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.85);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #121212;
+    }
+
+    .spotify-embed-container iframe {
+      display: block;
+      border: none;
+      width: 100%;
+    }
+
+    /* --------------------------------------------------------------------------
+       8. SECTION G: REFLECTION — A FIRST
+       -------------------------------------------------------------------------- */
+    .reflection-quote-card {
+      margin-top: 36px;
+      border-left: 3px solid var(--blood-red);
+      padding: 24px 32px;
+      background: rgba(181, 18, 32, 0.03);
+    }
+
+    .reflection-text {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0 0 16px;
+      font-weight: 400;
+    }
+
+    .reflection-subtext {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--case-text-muted);
+      margin: 0;
+    }
+
+    /* --------------------------------------------------------------------------
+       9. FOOTER NAVIGATION (PREV / BACK TO GRAPHIC DESIGN / NEXT)
+       -------------------------------------------------------------------------- */
+    .case-footer {
+      border-top: 1px solid var(--case-border);
+      background: #050505;
+      padding: 64px 32px 48px;
+    }
+
+    .case-footer-inner {
+      max-width: var(--case-wide-w);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .case-nav-triad {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .case-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .case-nav-link:hover {
+      color: var(--blood-red);
+    }
+
+    .case-nav-link:focus-visible {
+      color: var(--blood-red);
+      outline: 2px solid var(--blood-red);
+      outline-offset: 4px;
+    }
+
+    .case-nav-prev {
+      justify-self: start;
+    }
+
+    .case-nav-prev:hover {
+      transform: translateX(-4px);
+    }
+
+    .case-nav-hub {
+      justify-self: center;
+      padding: 10px 20px;
+      border: 1px solid var(--case-border);
+      border-radius: 3px;
+      background: var(--case-panel-bg);
+      color: var(--paper-white);
+    }
+
+    .case-nav-hub:hover {
+      border-color: var(--blood-red);
+      color: var(--blood-red);
+      transform: translateY(-2px);
+    }
+
+    .case-nav-next {
+      justify-self: end;
+    }
+
+    .case-nav-next:hover {
+      transform: translateX(4px);
+    }
+
+    .case-footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--case-border);
+      padding-top: 28px;
+    }
+
+    .footer-credit {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--case-text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* --------------------------------------------------------------------------
+       10. RESPONSIVE DESIGN (TABLET & MOBILE)
+       -------------------------------------------------------------------------- */
+    @media (max-width: 900px) {
+      .editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .concept-showcase {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .release-stage-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .release-phone-col {
+        order: 1;
+      }
+      .release-info-col {
+        order: 2;
+        align-items: center;
+        text-align: center;
+      }
+      .release-copy {
+        max-width: 100%;
+      }
+      .release-action-wrap {
+        align-items: center;
+      }
+      .case-hero-meta-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .palette-swatches-row {
+        gap: 14px;
+      }
+      .swatch-block {
+        height: 150px;
+      }
+      .palette-swatch.swatch-prominent .swatch-block {
+        height: 170px;
+      }
+      .case-nav-triad {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        text-align: center;
+      }
+      .case-nav-prev, .case-nav-hub, .case-nav-next {
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .case-nav {
+        padding: 14px 20px;
+      }
+      .case-nav-badge {
+        display: none;
+      }
+      .case-hero {
+        padding: 44px 18px 52px;
+      }
+      .case-hero-artwork-wrap {
+        max-width: 320px;
+      }
+      .case-hero-meta-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 20px 0;
+      }
+      .case-section {
+        padding: 60px 18px;
+      }
+      .lead-statement {
+        font-size: 18px;
+      }
+      .case-p {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      .concept-showcase {
+        padding: 24px 14px;
+        gap: 24px;
+      }
+      .concept-cassette-views {
+        gap: 12px;
+        max-width: 100%;
+      }
+      .concept-front-view {
+        max-width: 240px;
+      }
+      .concept-spine-view {
+        width: 38px;
+      }
+      .palette-intro-grid {
+        margin-bottom: 32px;
+      }
+      .palette-swatches-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .palette-swatch {
+        padding: 12px;
+      }
+      .palette-swatch.swatch-prominent {
+        grid-column: span 1;
+      }
+      .palette-swatch.swatch-prominent .swatch-block {
+        height: 135px;
+      }
+      .palette-swatch:not(.swatch-prominent) .swatch-block {
+        height: 105px;
+      }
+      .palette-swatch.swatch-yellow {
+        grid-column: span 2;
+      }
+      .palette-swatch.swatch-yellow .swatch-block {
+        height: 70px;
+      }
+      .swatch-name {
+        font-size: 13px;
+      }
+      .swatch-hex {
+        font-size: 11px;
+      }
+      .case-section-release {
+        padding: 68px 18px 76px;
+      }
+      .release-phone-wrapper {
+        max-width: 280px;
+      }
+      .release-phone-glow {
+        width: 260px;
+        height: 380px;
+      }
+      .release-organic-edge.top-left {
+        width: 180px;
+        height: 180px;
+        left: -40px;
+        top: -40px;
+      }
+      .release-organic-edge.bottom-right {
+        width: 180px;
+        height: 180px;
+        right: -40px;
+        bottom: -40px;
+      }
+      .release-title {
+        font-size: 28px;
+      }
+      .release-cover-card {
+        max-width: 100%;
+      }
+      .reflection-quote-card {
+        padding: 20px 18px;
+      }
+      .reflection-text {
+        font-size: 15px;
+      }
+      .case-footer {
+        padding: 48px 20px 36px;
+      }
+      .case-footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* Accessibility prefers-reduced-motion overrides */
+    @media (prefers-reduced-motion: reduce) {
+      .palette-swatch {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .release-phone-wrapper {
+        animation: none !important;
+      }
+      .release-phone-glow {
+        animation: none !important;
+      }
+      .scroll-prompt-line {
+        animation: none !important;
+      }
+      .release-phone-col, .release-info-col {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .release-phone-img {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="case-page">
+
+  <!-- ========================================================================
+       TOP STICKY NAVIGATION
+       ======================================================================== -->
+  <header>
+    <nav class="case-nav" aria-label="Case Study Navigation">
+      <div class="case-nav-left">
+        <a href="index.html#graphic-design" class="case-nav-back">
+          <span class="back-arrow" aria-hidden="true">←</span> BACK TO GRAPHIC DESIGN
+        </a>
+      </div>
+      <div class="case-nav-right">
+        <span class="case-nav-brand">Neha Trivedi</span>
+        <span class="case-nav-badge">Client Project</span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="case-main" id="main-content">
+
+    <!-- ======================================================================
+         SECTION A: OPENING / HERO — PRIMARY SQUARE ALBUM COVER PRESENTATION
+         ====================================================================== -->
+    <section class="case-hero" aria-label="Project Hero Header">
+      
+      <!-- Label & Headings -->
+      <div class="case-hero-pre">
+        <span class="badge-dot" aria-hidden="true">●</span> CLIENT PROJECT
+      </div>
+      <h1 class="case-hero-title">KABHI KABHI</h1>
+      <p class="case-hero-artist">REYDOR</p>
+      <p class="case-hero-subtitle">Album Cover Artwork</p>
+
+      <!-- Prominent Original Square Album Cover Artwork -->
+      <div class="case-hero-artwork-wrap">
+        <div class="case-hero-artwork-frame square-cover-frame">
+          <img 
+            src="assets/images/kabhi-kabhi-cover.jpg" 
+            alt="Kabhi Kabhi Original Master Album Cover Artwork designed by Neha Trivedi for Reydor" 
+            class="case-hero-cover-img"
+            width="1024" 
+            height="1024">
+        </div>
+      </div>
+
+      <!-- Small Project Information Section -->
+      <div class="case-hero-meta-strip" aria-label="Project Specifications">
+        <div class="meta-strip-col">
+          <span class="meta-strip-label">My Role</span>
+          <span class="meta-strip-value">Creative Direction, Art Direction & Album Cover Design</span>
+        </div>
+        <div class="meta-strip-col">
+          <span class="meta-strip-label">Category</span>
+          <span class="meta-strip-value">Music / Album Cover Artwork</span>
+        </div>
+        <div class="meta-strip-col">
+          <span class="meta-strip-label">Software</span>
+          <span class="meta-strip-value">Canva</span>
+        </div>
+        <div class="meta-strip-col">
+          <span class="meta-strip-label">Project Type</span>
+          <span class="meta-strip-value">Client Project</span>
+        </div>
+      </div>
+
+      <!-- Subtle Scroll Indicator -->
+      <a href="#the-project" class="case-scroll-prompt" aria-label="Scroll down to project details">
+        <span class="scroll-prompt-text">Scroll to explore</span>
+        <span class="scroll-prompt-line" aria-hidden="true"></span>
+      </a>
+
+    </section>
+
+    <!-- ======================================================================
+         SECTION B: PROJECT OVERVIEW
+         ====================================================================== -->
+    <section class="case-section" id="the-project" aria-labelledby="heading-the-project">
+      <div class="case-content-container">
+        <span class="section-eyebrow">01 / Overview</span>
+        <h2 class="section-heading" id="heading-the-project">THE PROJECT</h2>
+
+        <div class="editorial-grid">
+          <div>
+            <p class="lead-statement">
+              My first album cover project for a client—creating a brand-new visual identity for <strong>Reydor's</strong> release.
+            </p>
+          </div>
+          <div class="narrative-body">
+            <p class="case-p">
+              This was my first album cover design created for a client. Rather than a redesign or speculative concept, it was an original cover designed specifically for the artist's upcoming release.
+            </p>
+            <p class="case-p">
+              The objective was to establish a distinctive visual identity that captured the soul of the track, translating the song's underlying emotional intensity into artwork that stood out across streaming platforms and physical music formats.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION C: CREATIVE DIRECTION — RAGE OF LOVE
+         ====================================================================== -->
+    <section class="case-section" id="creative-direction" aria-labelledby="heading-creative-direction">
+      <div class="case-content-container">
+        <span class="section-eyebrow">02 / Concept</span>
+        <h2 class="section-heading" id="heading-creative-direction">RAGE OF LOVE</h2>
+
+        <div class="editorial-grid">
+          <div>
+            <p class="lead-statement">
+              Interpreting the song's emotional atmosphere as a raw collision of <strong>love, intensity and rage</strong>.
+            </p>
+          </div>
+          <div class="narrative-body">
+            <p class="case-p">
+              When listening to the track, the emotional atmosphere felt deeply volatile—a complex interplay where tenderness collides with uninhibited passion. I interpreted this core feeling as the <em>rage of love</em>.
+            </p>
+            <p class="case-p">
+              The creative direction was built directly around that interpretation. Stark pitch blacks, saturated crimson reds, and high-contrast photographic portraiture were composed together to evoke both classical romance and sudden emotional ferocity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Concept Artwork Exhibition (Original Cover & Cassette Translation) -->
+        <div class="concept-showcase">
+          <div class="concept-cover-view">
+            <img 
+              src="assets/images/kabhi-kabhi-cover.jpg" 
+              alt="Kabhi Kabhi Original Master Album Cover Artwork reflecting the rage of love" 
+              width="1024" 
+              height="1024" 
+              loading="lazy">
+          </div>
+          <div class="concept-cassette-views">
+            <div class="concept-front-view">
+              <img 
+                src="assets/images/kabhi-kabhi-front.png" 
+                alt="Kabhi Kabhi physical cassette front adaptation" 
+                width="815" 
+                height="512" 
+                loading="lazy">
+            </div>
+            <div class="concept-spine-view">
+              <img 
+                src="assets/images/kabhi-kabhi-spine.png" 
+                alt="Kabhi Kabhi physical cassette spine packaging" 
+                width="89" 
+                height="577" 
+                loading="lazy">
+            </div>
+          </div>
+        </div>
+        <p class="concept-caption">
+          Primary digital single artwork (left) and physical cassette packaging translation (right).
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION D: THE COLOUR STORY — PALETTE DOCUMENTATION
+         ====================================================================== -->
+    <section class="case-section case-section-palette" id="the-colour-story" aria-labelledby="heading-colour-story">
+      <div class="case-content-container">
+        <span class="section-eyebrow">03 / Palette</span>
+        <h2 class="section-heading" id="heading-colour-story">THE COLOUR STORY</h2>
+
+        <div class="editorial-grid palette-intro-grid">
+          <div>
+            <p class="lead-statement">
+              A bold contrast of <strong>vintage red</strong>, monochrome imagery and <strong>electric yellow</strong> creates the visual identity of the release.
+            </p>
+          </div>
+          <div class="narrative-body">
+            <p class="case-p">
+              Sampled directly from the master Kabhi Kabhi album artwork, these five tones establish the emotional friction of the release. Saturated vintage red and pitch black anchor the visual weight, while warm grey and charcoal soften the analog portrait texture, punctuated by razor-sharp electric yellow typography.
+            </p>
+          </div>
+        </div>
+
+        <!-- Five-Swatch Horizontal Row on Desktop / Responsive Grid on Mobile -->
+        <div class="palette-swatches-row" role="region" aria-label="Official release colour swatches">
+          
+          <div class="palette-swatch swatch-prominent swatch-red">
+            <div class="swatch-block" style="background-color: #D82D33;" aria-label="Vintage Red #D82D33 colour block"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Vintage Red</span>
+              <span class="swatch-hex">#D82D33</span>
+            </div>
+          </div>
+
+          <div class="palette-swatch swatch-prominent swatch-black">
+            <div class="swatch-block" style="background-color: #121212;" aria-label="Deep Black #121212 colour block"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Deep Black</span>
+              <span class="swatch-hex">#121212</span>
+            </div>
+          </div>
+
+          <div class="palette-swatch swatch-charcoal">
+            <div class="swatch-block" style="background-color: #373737;" aria-label="Charcoal #373737 colour block"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Charcoal</span>
+              <span class="swatch-hex">#373737</span>
+            </div>
+          </div>
+
+          <div class="palette-swatch swatch-grey">
+            <div class="swatch-block" style="background-color: #C3C2B3;" aria-label="Warm Grey #C3C2B3 colour block"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Warm Grey</span>
+              <span class="swatch-hex">#C3C2B3</span>
+            </div>
+          </div>
+
+          <div class="palette-swatch swatch-yellow">
+            <div class="swatch-block" style="background-color: #F0ED11;" aria-label="Electric Yellow #F0ED11 colour block"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Electric Yellow</span>
+              <span class="swatch-hex">#F0ED11</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION E: THE DESIGN — FROM IDEA TO ARTWORK (DETAIL STUDIES)
+         ====================================================================== -->
+    <section class="case-section" id="the-design" aria-labelledby="heading-the-design">
+      <div class="case-content-container">
+        <span class="section-eyebrow">04 / Craft & Execution</span>
+        <h2 class="section-heading" id="heading-the-design">FROM IDEA TO ARTWORK</h2>
+
+        <div class="editorial-grid">
+          <div>
+            <p class="lead-statement">
+              Crafted in <strong>Canva</strong>, focusing on bold typographic weight, analog texture and emotive imagery.
+            </p>
+          </div>
+          <div class="narrative-body">
+            <p class="case-p">
+              Since this was my first client project, Canva was the design software I utilized at the time to bring the concept to life. Working within Canva, I developed the entire visual composition independently while incorporating the client's direct feedback and project requirements.
+            </p>
+            <p class="case-p">
+              While earlier working iterations were lost over time, the delivered artwork contains deliberate micro-details that embody the project's artistic vision:
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual Details / Close-Up Macro Grid from Original Artwork -->
+        <div class="details-grid">
+          
+          <!-- Detail 1: Portrait & Classical Motif -->
+          <article class="detail-card">
+            <div class="detail-img-wrap">
+              <img 
+                src="assets/images/kabhi-kabhi-crop-portrait.jpg" 
+                alt="Close-up detail of the central vintage classical portrait and floral bouquet from the original Kabhi Kabhi cover" 
+                loading="lazy">
+            </div>
+            <div class="detail-content">
+              <span class="detail-tag">Artwork Detail 01</span>
+              <h3 class="detail-title">Classical Portraiture & Romance</h3>
+              <p class="detail-desc">
+                A monochrome vintage portrait of a woman with a wide-brimmed hat holding a floral bouquet, anchoring the classical romantic core.
+              </p>
+            </div>
+          </article>
+
+          <!-- Detail 2: Condensed Bold Typography & Tension -->
+          <article class="detail-card">
+            <div class="detail-img-wrap">
+              <img 
+                src="assets/images/kabhi-kabhi-crop-typography.jpg" 
+                alt="Close-up detail of the condensed KABHI typography and yellow Reydor credit on the red field" 
+                loading="lazy">
+            </div>
+            <div class="detail-content">
+              <span class="detail-tag">Artwork Detail 02</span>
+              <h3 class="detail-title">Typographic Tension & Palette</h3>
+              <p class="detail-desc">
+                High-contrast condensed "KABHI KABHI" letterforms framed by vivid crimson stripes, accented by the subtle yellow "reydor" signature.
+              </p>
+            </div>
+          </article>
+
+          <!-- Detail 3: Cassette Medium & Packaging Adaptation -->
+          <article class="detail-card">
+            <div class="detail-img-wrap">
+              <img 
+                src="assets/images/kabhi-kabhi-front.png" 
+                alt="Kabhi Kabhi physical cassette tape packaging adaptation" 
+                loading="lazy">
+            </div>
+            <div class="detail-content">
+              <span class="detail-tag">Packaging Adaptation</span>
+              <h3 class="detail-title">Analog Physical Archive</h3>
+              <p class="detail-desc">
+                Translating the 2D digital album cover into tactile transparent cassette media with custom labels and spine typography.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION F: MY ROLE — WHAT I DID
+         ====================================================================== -->
+    <section class="case-section" id="my-role" aria-labelledby="heading-my-role">
+      <div class="case-content-container">
+        <span class="section-eyebrow">05 / Responsibilities</span>
+        <h2 class="section-heading" id="heading-my-role">WHAT I DID</h2>
+
+        <div class="editorial-grid">
+          <div>
+            <p class="lead-statement">
+              Sole responsibility for <strong>creative direction, artwork execution</strong> and client delivery.
+            </p>
+          </div>
+          <div class="narrative-body">
+            <p class="case-p">
+              From the initial brief to the final master files, I directed and created the overall artwork for Reydor's release:
+            </p>
+          </div>
+        </div>
+
+        <div class="role-list">
+          <div class="role-item">
+            <span class="role-number">01</span>
+            <div class="role-text-wrap">
+              <h3 class="role-title">Interpreted the Song's Direction</h3>
+              <p class="role-desc">Analyzed the track's musical pacing and lyrical tone to define its core thematic focus: the rage of love.</p>
+            </div>
+          </div>
+
+          <div class="role-item">
+            <span class="role-number">02</span>
+            <div class="role-text-wrap">
+              <h3 class="role-title">Developed Creative Direction</h3>
+              <p class="role-desc">Established the high-contrast aesthetic mood, color palette, typography and vintage photographic composition.</p>
+            </div>
+          </div>
+
+          <div class="role-item">
+            <span class="role-number">03</span>
+            <div class="role-text-wrap">
+              <h3 class="role-title">Designed the Album Cover</h3>
+              <p class="role-desc">Created the entire visual artwork independently using Canva, balancing artistic expression with release requirements.</p>
+            </div>
+          </div>
+
+          <div class="role-item">
+            <span class="role-number">04</span>
+            <div class="role-text-wrap">
+              <h3 class="role-title">Incorporated Client Feedback</h3>
+              <p class="role-desc">Collaborated closely with the artist, refining details and layout elements based on Reydor's input.</p>
+            </div>
+          </div>
+
+          <div class="role-item">
+            <span class="role-number">05</span>
+            <div class="role-text-wrap">
+              <h3 class="role-title">Delivered Final Artwork</h3>
+              <p class="role-desc">Supplied final production-ready artwork files for official distribution across Spotify and digital channels.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION G: DIGITAL RELEASE PRESENTATION (THE RELEASE)
+         - Subtle distressed textures, vintage grain, soft dark-red floral edges
+         - Complete uncropped phone mockup with floating effect & red radial glow
+         - Supporting information & independent high-clarity original cover view
+         - Functional LISTEN ON SPOTIFY button & preserved official Spotify player
+         ====================================================================== -->
+    <section class="case-section case-section-release" id="the-release" aria-labelledby="heading-the-release">
+      
+      <!-- Subtle Distressed Grain & Dark-Red Organic Edge Textures -->
+      <div class="release-backdrop-layer" aria-hidden="true">
+        <div class="release-organic-edge top-left"></div>
+        <div class="release-organic-edge bottom-right"></div>
+        <div class="release-vintage-grain"></div>
+      </div>
+
+      <div class="case-content-container relative-z">
+        <span class="section-eyebrow">06 / Release</span>
+        <h2 class="section-heading" id="heading-the-release">THE RELEASE</h2>
+        <p class="release-lead-subtitle">From a visual concept to a digital release.</p>
+
+        <!-- Digital Campaign Stage: Editorial Two-Column (Phone off-center + Info & Original Cover) -->
+        <div class="release-stage-grid">
+          
+          <!-- Phone Mockup Column (Left / Off-Center on Desktop, Centered on Mobile) -->
+          <div class="release-phone-col">
+            <div class="release-phone-stage" id="phone-tilt-stage">
+              <!-- Subtle Red Radial Glow behind the phone -->
+              <div class="release-phone-glow" aria-hidden="true"></div>
+              
+              <!-- Complete Phone Mockup (Floating & Perspective Tilt) -->
+              <div class="release-phone-wrapper" id="phone-float-wrapper">
+                <img 
+                  src="assets/images/kabhi-kabhi-phone-mockup.png" 
+                  alt="Kabhi Kabhi Spotify Mobile Release Phone Mockup" 
+                  class="release-phone-img"
+                  width="682" 
+                  height="1024"
+                  loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- Supporting Information & Original Cover Companion Column -->
+          <div class="release-info-col">
+            <div class="release-info-header">
+              <span class="release-badge">DIGITAL RELEASE</span>
+              <h3 class="release-title">KABHI KABHI</h3>
+              <p class="release-artist">REYDOR</p>
+              <p class="release-copy">
+                A visual interpretation of the rage of love, created for the artist's release.
+              </p>
+            </div>
+
+            <!-- Original Cover Companion Display (High-clarity independent view) -->
+            <div class="release-cover-card">
+              <div class="release-cover-frame">
+                <img 
+                  src="assets/images/kabhi-kabhi-cover.jpg" 
+                  alt="Kabhi Kabhi Original Master Album Cover Artwork" 
+                  class="release-cover-img"
+                  width="1024" 
+                  height="1024"
+                  loading="lazy">
+              </div>
+              <div class="release-cover-meta">
+                <span class="cover-meta-label">Original Cover Artwork</span>
+                <span class="cover-meta-dim">1024 × 1024 Master Digital Single</span>
+              </div>
+            </div>
+
+            <!-- Functional Action Button -->
+            <div class="release-action-wrap">
+              <a 
+                href="https://open.spotify.com/track/1YPia5T6cDBQEaDilrzgNf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="spotify-release-btn">
+                LISTEN ON SPOTIFY <span class="arrow-glyph" aria-hidden="true">↗</span>
+              </a>
+              <span class="release-note">Official release streaming worldwide</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Preserved Official Spotify Embed Player -->
+        <div class="release-player-embed-wrap">
+          <div class="spotify-embed-container">
+            <iframe 
+              style="border-radius:12px" 
+              src="https://open.spotify.com/embed/track/1YPia5T6cDBQEaDilrzgNf" 
+              width="100%" 
+              height="152" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"
+              title="Kabhi Kabhi by Reydor on Spotify">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION H: REFLECTION — A FIRST
+         ====================================================================== -->
+    <section class="case-section" id="reflection" aria-labelledby="heading-reflection">
+      <div class="case-content-container">
+        <span class="section-eyebrow">07 / Reflection</span>
+        <h2 class="section-heading" id="heading-reflection">A FIRST</h2>
+
+        <div class="editorial-grid">
+          <div>
+            <p class="lead-statement">
+              A foundational step in my growth as an <strong>independent visual designer</strong>.
+            </p>
+          </div>
+          <div class="narrative-body">
+            <div class="reflection-quote-card">
+              <p class="reflection-text">
+                "This project was my first client album cover. It was an invaluable opportunity to translate an intangible emotional feeling into a cohesive visual identity, while learning to balance my own creative intuition with client feedback and real-world release requirements."
+              </p>
+              <p class="reflection-subtext">
+                Working within the tools I had at the time, the project reinforced that strong creative direction stems from clear conceptual interpretation, careful composition, and listening deeply to the emotional core of the work.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       SECTION I: FOOTER NAVIGATION (PREV / BACK TO GRAPHIC DESIGN / NEXT)
+       ======================================================================== -->
+  <footer class="case-footer">
+    <div class="case-footer-inner">
+      
+      <!-- Editorial Triad Navigation -->
+      <nav class="case-nav-triad" aria-label="Project Archive Navigation">
+        <a href="case-study-art-against-fascists.html" class="case-nav-link case-nav-prev" aria-label="Previous project: Art Against Fascists">
+          <span aria-hidden="true">←</span> PREV: ART AGAINST FASCISTS
+        </a>
+        <a href="index.html#graphic-design" class="case-nav-link case-nav-hub">
+          BACK TO GRAPHIC DESIGN
+        </a>
+        <a href="case-study-qawwali-ki-baithak.html" class="case-nav-link case-nav-next">
+          NEXT: QAWWALI KI BAITHAK <span aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Credits -->
+      <div class="case-footer-bottom">
+        <span class="footer-credit">Neha Trivedi — Graphic Designer || Aspiring Filmmaker</span>
+        <span class="footer-credit">Kabhi Kabhi · Client Project</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       CASE STUDY INTERACTIVE SCRIPT
+       - Scroll-triggered entrance reveals
+       - Desktop 3D perspective cursor tilt on the phone mockup
+       - Reduced motion accessibility check
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Scroll-triggered entrance for animated case study sections (Colour Story & Digital Release)
+      const animatedSections = [
+        document.getElementById('the-colour-story'),
+        document.getElementById('the-release')
+      ].filter(Boolean);
+
+      if (animatedSections.length > 0 && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        animatedSections.forEach(sec => observer.observe(sec));
+
+        // Fallback assurance timer
+        setTimeout(() => {
+          animatedSections.forEach(sec => sec.classList.add('is-revealed'));
+        }, 1200);
+      } else {
+        animatedSections.forEach(sec => sec.classList.add('is-revealed'));
+      }
+
+      // 2. Desktop 3D Perspective Tilt on Phone Mockup
+      const stage = document.getElementById('phone-tilt-stage');
+      const phoneImg = document.querySelector('.release-phone-img');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+      if (stage && phoneImg && isFinePointer && !prefersReducedMotion) {
+        let isHovered = false;
+
+        stage.addEventListener('mouseenter', () => {
+          isHovered = true;
+        });
+
+        stage.addEventListener('mousemove', (e) => {
+          if (!isHovered) return;
+          const rect = stage.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+          const y = (e.clientY - rect.top) / rect.height - 0.5; // -0.5 to 0.5
+          const tiltX = -y * 8; // subtle max ±4 deg
+          const tiltY = x * 8;
+          phoneImg.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
+        });
+
+        stage.addEventListener('mouseleave', () => {
+          isHovered = false;
+          phoneImg.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
