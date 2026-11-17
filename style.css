@@ -277,6 +277,10 @@ body {
   transition: text-shadow 0.4s ease;
 }
 
+.hero-name-line {
+  display: inline;
+}
+
 /* "Graphic Designer || Aspiring Filmmaker" — Matches Original Subtitle */
 .hero-subtitle {
   font-family: var(--font-sans);
@@ -444,7 +448,8 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+/* Tablet Layout: Preserves single-line title and top avatar */
+@media (min-width: 768px) and (max-width: 1024px) {
   .hero-character-wrapper {
     top: clamp(16px, 3.5vh, 32px);
     width: clamp(72px, 11vw, 95px);
@@ -466,47 +471,130 @@ body {
   }
 
   .hero-title-aurora {
-    font-size: clamp(2.2rem, 7.5vw, 3.8rem);
+    font-size: clamp(2.4rem, 7.5vw, 3.8rem);
     margin-bottom: 14px;
     white-space: nowrap;
   }
 
   .hero-subtitle {
-    font-size: clamp(0.72rem, 2.2vw, 1.1rem);
+    font-size: clamp(0.75rem, 2.2vw, 1.1rem);
     white-space: nowrap;
   }
 }
 
-@media (max-width: 480px) {
-  .hero-character-wrapper {
-    top: clamp(14px, 3vh, 24px);
-    width: clamp(65px, 16vw, 82px);
-    height: clamp(65px, 16vw, 82px);
+/* ==========================================================================
+   MOBILE HERO REFINEMENT (max-width: 767px)
+   Vertical Order:
+     1. Existing logo / character illustration (centered above name, balanced spacing)
+     2. NEHA (first line, centered)
+     3. TRIVEDI (second line, centered)
+     4. Existing subtitle: Graphic Designer || Aspiring Filmmaker
+   ========================================================================== */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 4vh, 36px) 16px;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
+  /* 1. Existing Logo / Character Avatar: Moved directly above the name, horizontally centered */
+  .hero-character-wrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: clamp(72px, 20vw, 92px);
+    height: clamp(72px, 20vw, 92px);
+    margin: 0 auto clamp(14px, 3vh, 24px);
+    z-index: 20;
+    flex-shrink: 0;
+  }
+
+  .hero-character-wrapper:hover,
+  .hero-character-wrapper:focus-visible,
+  .hero-character-wrapper.is-active {
+    transform: scale(1.04);
+  }
+
+  /* Centered content wrapper */
   .hero-content-wrapper {
-    padding: 0 16px;
-    max-width: 100vw;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 12px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
   }
 
-  .hero-title-aurora {
-    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
+  .hero-editorial-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
   }
 
+  /* 2 & 3. Name typography: Significantly larger, split into exactly two lines: NEHA / TRIVEDI */
+  .hero-title-aurora {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 15vw, 5.2rem);
+    font-weight: 800;
+    color: var(--blood-red);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    margin: 0 0 clamp(14px, 3vh, 22px) 0;
+    text-align: center;
+    text-shadow: 0 4px 30px var(--blood-glow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    white-space: normal;
+    text-transform: uppercase;
+  }
+
+  .hero-name-line {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  /* 4. Subtitle: Graphic Designer || Aspiring Filmmaker */
   .hero-subtitle {
-    font-size: clamp(0.65rem, 2.8vw, 0.85rem);
+    font-family: var(--font-sans);
+    font-size: clamp(0.68rem, 2.6vw, 0.95rem);
     letter-spacing: 0.02em;
     white-space: nowrap;
+    padding: 4px 8px;
+    margin: 0 auto;
+    line-height: 1.35;
+    text-align: center;
+    max-width: 100%;
   }
 
   .hero-subtitle .subtitle-pipes {
-    margin: 0 4px;
+    margin: 0 5px;
   }
 
+  /* Spiral graphics preserved */
   .spiral-anchor-top-left {
     top: 10vh;
     left: 6vw;
@@ -519,6 +607,29 @@ body {
     left: 94vw;
     width: clamp(220px, 58vw, 320px);
     height: clamp(220px, 58vw, 320px);
+  }
+}
+
+/* Compact mobile screens (<= 360px, e.g. iPhone SE 320px) */
+@media (max-width: 360px) {
+  .hero-character-wrapper {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 12px;
+  }
+
+  .hero-title-aurora {
+    font-size: clamp(2.7rem, 13.5vw, 3.2rem);
+    line-height: 0.86;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.58rem, 2.3vw, 0.68rem);
+  }
+
+  .hero-subtitle .subtitle-pipes {
+    margin: 0 3px;
   }
 }
 
