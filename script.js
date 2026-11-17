@@ -1276,18 +1276,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const freelanceCard = document.getElementById('satyajit-ray-tshirt-card');
     if (freelanceCard) {
       freelanceCard.addEventListener('click', (e) => {
-        if (e.target.closest('#freelance-direct-case-link')) {
+        // Direct click on the Explore Project link: allow native browser navigation
+        if (e.target.closest('#freelance-explore-btn, .hover-cta-pill')) {
           return;
         }
-        e.preventDefault();
-        openExpandedPreview(SATYAJIT_RAY_PROJECT, true);
+        // Clicking anywhere else on the card: navigate directly to the case study
+        window.location.href = SATYAJIT_RAY_PROJECT.caseStudyUrl;
       });
 
       freelanceCard.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          if (e.target.closest('#freelance-direct-case-link')) return;
+          if (e.target.closest('#freelance-explore-btn, .hover-cta-pill')) {
+            return;
+          }
           e.preventDefault();
-          openExpandedPreview(SATYAJIT_RAY_PROJECT, true);
+          window.location.href = SATYAJIT_RAY_PROJECT.caseStudyUrl;
         }
       });
     }

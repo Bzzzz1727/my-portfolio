@@ -4375,9 +4375,11 @@ body.preview-modal-open {
 }
 
 .freelance-card:hover .freelance-hover-sheet,
-.freelance-card:focus-visible .freelance-hover-sheet {
+.freelance-card:focus-visible .freelance-hover-sheet,
+.freelance-card:focus-within .freelance-hover-sheet {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .hover-badge {
@@ -4428,6 +4430,7 @@ body.preview-modal-open {
   padding: 8px 14px;
   background: var(--blood-red, #B51220);
   color: #FFFFFF;
+  text-decoration: none;
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
@@ -4435,7 +4438,17 @@ body.preview-modal-open {
   text-transform: uppercase;
   border-radius: 3px;
   box-shadow: 0 4px 14px rgba(181, 18, 32, 0.4);
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.hover-cta-pill:hover,
+.hover-cta-pill:focus-visible {
+  background: #d61c2d;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(181, 18, 32, 0.55);
 }
 
 /* Static Editorial Caption Below Card */
@@ -4493,7 +4506,7 @@ body.preview-modal-open {
   font-size: 12.5px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.65);
-  margin: 0 0 14px;
+  margin: 0;
   max-width: 440px;
 }
 
