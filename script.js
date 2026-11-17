@@ -61,14 +61,45 @@ document.addEventListener('DOMContentLoaded', () => {
   let targetSubScrollY = 0;
   let currentSubScrollY = 0;
 
-  // Coordinate initial CSS entrance (800ms) with interactive JS transforms
-  let isIntroActive = true;
-  subtitle.addEventListener('animationend', () => {
+  // --------------------------------------------------------------------------
+  // Desktop Cinematic Opening Animation Coordinator
+  // - Plays only once per session on desktop (viewport > 768px)
+  // - Total duration: ~2.5 seconds
+  // - Tracked via sessionStorage ('neha_intro_played')
+  // - Returning visitors, mobile viewports, or prefers-reduced-motion
+  //   immediately see the resting homepage without delay or animation
+  // --------------------------------------------------------------------------
+  const INTRO_STORAGE_KEY = 'neha_intro_played';
+  const isDesktop = window.innerWidth > 768;
+  let hasPlayedIntro = false;
+  try {
+    hasPlayedIntro = Boolean(sessionStorage.getItem(INTRO_STORAGE_KEY));
+  } catch (err) {
+    hasPlayedIntro = false;
+  }
+
+  const shouldPlayIntro = isDesktop && !prefersReducedMotion.matches && document.documentElement.classList.contains('has-cinematic-intro');
+  let isIntroActive = shouldPlayIntro;
+
+  if (shouldPlayIntro) {
+    try {
+      sessionStorage.setItem(INTRO_STORAGE_KEY, 'true');
+    } catch (err) {}
+
+    // Complete the intro after 2500ms and smoothly hand off to interactive loop
+    setTimeout(() => {
+      if (isIntroActive) {
+        isIntroActive = false;
+        document.documentElement.classList.remove('has-cinematic-intro');
+      }
+    }, 2500);
+  } else {
     isIntroActive = false;
-  }, { once: true });
-  setTimeout(() => {
-    isIntroActive = false;
-  }, 850);
+    document.documentElement.classList.remove('has-cinematic-intro');
+    try {
+      sessionStorage.setItem(INTRO_STORAGE_KEY, 'true');
+    } catch (err) {}
+  }
 
   let rafId = null;
 
@@ -148,6 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateSpiralScroll = () => {
     if (prefersReducedMotion.matches) return;
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // During opening intro at page top, let CSS animation control spiral opacity
+    if (isIntroActive && scrollY === 0) return;
+
     const heroH = heroSection ? heroSection.offsetHeight : (window.innerHeight || 800);
     // Fully disappear before cassette section becomes the main viewport section (~35% of hero)
     const fadeDistance = Math.min(360, Math.max(200, heroH * 0.35));
@@ -188,6 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prefersReducedMotion.matches) return;
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
+    // If user scrolls during the opening animation, instantly complete the intro
+    if (isIntroActive && scrollY > 20) {
+      isIntroActive = false;
+      document.documentElement.classList.remove('has-cinematic-intro');
+    }
+
     // Title: shift vertically by a few pixels at most (clamped to max 8px)
     const maxTitleShift = 8.0;
     targetScrollShiftY = Math.min(maxTitleShift, Math.max(-maxTitleShift, scrollY * 0.06));
@@ -206,20 +247,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // 60FPS Smooth Render Loop (Linear Interpolation)
   const animate = () => {
     if (!prefersReducedMotion.matches) {
-      // Title ease factor: slightly responsive on hover, gentle damping on return
-      const titleEase = isHovered ? 0.08 : 0.05;
-
-      currentTiltX += (targetTiltX - currentTiltX) * titleEase;
-      currentTiltY += (targetTiltY - currentTiltY) * titleEase;
-      currentShiftX += (targetShiftX - currentShiftX) * titleEase;
-      currentScale += (targetScale - currentScale) * titleEase;
-      currentScrollShiftY += (targetScrollShiftY - currentScrollShiftY) * 0.07;
-
-      // Apply 3D perspective transform to the red name
-      title.style.transform = `perspective(1000px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg) translateX(${currentShiftX.toFixed(2)}px) translateY(${currentScrollShiftY.toFixed(2)}px) scale(${currentScale.toFixed(3)})`;
-
-      // Subtitle transform: apply smoothly once initial CSS entrance animation (800ms) completes
       if (!isIntroActive) {
+        // Title ease factor: slightly responsive on hover, gentle damping on return
+        const titleEase = isHovered ? 0.08 : 0.05;
+
+        currentTiltX += (targetTiltX - currentTiltX) * titleEase;
+        currentTiltY += (targetTiltY - currentTiltY) * titleEase;
+        currentShiftX += (targetShiftX - currentShiftX) * titleEase;
+        currentScale += (targetScale - currentScale) * titleEase;
+        currentScrollShiftY += (targetScrollShiftY - currentScrollShiftY) * 0.07;
+
+        // Apply 3D perspective transform to the red name
+        title.style.transform = `perspective(1000px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg) translateX(${currentShiftX.toFixed(2)}px) translateY(${currentScrollShiftY.toFixed(2)}px) scale(${currentScale.toFixed(3)})`;
+
         const subEase = isSubtitleHovered ? 0.09 : 0.05;
         currentSubCursorX += (targetSubCursorX - currentSubCursorX) * subEase;
         currentSubCursorY += (targetSubCursorY - currentSubCursorY) * subEase;
@@ -240,6 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
   prefersReducedMotion.addEventListener('change', (e) => {
     if (e.matches) {
       cancelAnimationFrame(rafId);
+      isIntroActive = false;
+      document.documentElement.classList.remove('has-cinematic-intro');
       title.style.transform = '';
       subtitle.style.transform = '';
       if (spiralBottomRight) {
@@ -253,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         spiralTopLeft.style.visibility = '';
       }
     } else {
-      animate();
+      rafId = requestAnimationFrame(animate);
     }
   });
 

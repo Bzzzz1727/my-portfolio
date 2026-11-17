@@ -332,6 +332,86 @@ body {
 }
 
 /* ==========================================================================
+   CINEMATIC DESKTOP OPENING ANIMATION (PLAYED ONCE PER SESSION)
+   Atmospheric, minimal, restrained 2.5-second opening sequence:
+   1. Start with pitch black screen (0.0s - 0.25s)
+   2. Gradually fade in existing spiral graphics (0.25s - 1.35s)
+   3. Reveal "NEHA TRIVEDI" title with gentle fade & slight scale (0.75s - 1.95s)
+   4. Reveal subtitle shortly after title with subtle fade & lift (1.25s - 2.25s)
+   5. Character avatar fades in smoothly (1.35s - 2.25s)
+   6. Seamless transition into original composition (2.5s)
+   ========================================================================== */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  html.has-cinematic-intro .hero-spiral-layer {
+    opacity: 0;
+    animation: introSpiralFadeIn 1.1s cubic-bezier(0.25, 1, 0.5, 1) 0.25s forwards;
+  }
+
+  html.has-cinematic-intro .hero-title-aurora {
+    opacity: 0;
+    animation: introTitleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards;
+  }
+
+  html.has-cinematic-intro .hero-subtitle {
+    opacity: 0;
+    animation: introSubtitleReveal 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.25s forwards;
+  }
+
+  html.has-cinematic-intro .hero-character-wrapper {
+    opacity: 0;
+    animation: introCharacterFadeIn 0.9s cubic-bezier(0.2, 0, 0.2, 1) 1.35s forwards;
+  }
+
+  /* When intro has already played in this session (or returning):
+     Display immediately without delay or replay */
+  html:not(.has-cinematic-intro) .hero-subtitle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes introSpiralFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes introTitleReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.965);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes introSubtitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introCharacterFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
    ACCESSIBILITY & RESPONSIVE DESIGN
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -339,9 +419,15 @@ body {
     animation: none !important;
     transform: none !important;
   }
+  .hero-spiral-layer {
+    opacity: 1 !important;
+    animation: none !important;
+  }
   .hero-character-wrapper {
     transition: none !important;
     transform: translateX(-50%) !important;
+    opacity: 1 !important;
+    animation: none !important;
   }
   .character-img {
     transition: none !important;

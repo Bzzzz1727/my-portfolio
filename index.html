@@ -38,6 +38,21 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Desktop Cinematic Opening Animation: Session Check (Executes synchronously before render) -->
+  <script>
+    (function() {
+      try {
+        var isDesktop = window.innerWidth > 768;
+        var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var hasPlayed = sessionStorage.getItem('neha_intro_played');
+        if (isDesktop && !prefersReduced && !hasPlayed) {
+          document.documentElement.classList.add('has-cinematic-intro');
+          sessionStorage.setItem('neha_intro_played', 'true');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
