@@ -1,0 +1,201 @@
+/* ==========================================================================
+   CUSTOM INTERACTIVE CURSOR SYSTEM (DESKTOP ONLY)
+   - Independent, isolated module
+   - Active strictly on devices supporting hover & fine pointer (> 768px)
+   - Zero interference with mobile/touch devices
+   - Fluid requestAnimationFrame tracking with subtle trailing glide
+   - States:
+       1. Default (9px white circle)
+       2. Links & Buttons (20px deep red #B51220)
+       3. Project Cards (74px white circle with VIEW)
+       4. Video Previews (74px white circle with PLAY)
+       5. Draggable Carousel (74px white circle with DRAG)
+       6. Spiral Easter Egg (18px thin white crosshair)
+       7. Click press (subtle scale 0.82)
+   ========================================================================== */
+
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  /* Hide native cursor across the site ONLY when custom cursor is active */
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor input,
+  html.has-custom-cursor select,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor .cassette-stage,
+  html.has-custom-cursor .cassette-slot,
+  html.has-custom-cursor .video-poster-layer,
+  html.has-custom-cursor .editing-video-stage,
+  html.has-custom-cursor .browser-frame-wrapper {
+    cursor: none !important;
+  }
+
+  /* Root cursor positioning wrapper - fixed, top-left 0, z-index above all layers */
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none !important;
+    z-index: 9999999;
+    will-change: transform;
+    opacity: 0;
+    transition: opacity 0.22s ease-out;
+  }
+
+  .custom-cursor.cursor-visible {
+    opacity: 1;
+  }
+
+  .custom-cursor.cursor-hidden {
+    opacity: 0 !important;
+  }
+
+  /* Morphing circular cursor body */
+  .cursor-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    margin-top: -4.5px;
+    margin-left: -4.5px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none !important;
+    box-sizing: border-box;
+    will-change: transform, width, height, margin, background-color, border-color, opacity;
+    transition: 
+      width 0.26s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.26s cubic-bezier(0.16, 1, 0.3, 1),
+      margin 0.26s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.22s ease,
+      border-color 0.22s ease,
+      transform 0.14s cubic-bezier(0.2, 0, 0.2, 1),
+      opacity 0.2s ease;
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+  }
+
+  /* Click interaction: subtle shrink */
+  .custom-cursor.cursor-clicking .cursor-body {
+    transform: scale(0.82);
+  }
+
+  /* State 2: Links and buttons (red accent dot, slightly larger ~20px) */
+  .custom-cursor.cursor-state-link .cursor-body {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    background-color: var(--blood-red, #B51220);
+    border-radius: 50%;
+    border: none;
+  }
+
+  /* States 3, 4, 5: Expanded badge circle (VIEW, PLAY, DRAG) */
+  .custom-cursor.cursor-state-badge .cursor-body {
+    width: 74px;
+    height: 74px;
+    margin-top: -37px;
+    margin-left: -37px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* Typography inside badge */
+  .cursor-label {
+    position: absolute;
+    font-family: 'Cinzel', 'Inter', -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    user-select: none;
+    pointer-events: none !important;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity 0.18s ease 0.04s, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.04s;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .custom-cursor.cursor-state-badge .cursor-label {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Tactile feedback while actively dragging a carousel */
+  .custom-cursor.cursor-dragging .cursor-body {
+    transform: scale(0.88);
+  }
+
+  /* State 6: Hidden Spiral Easter Egg (Minimal White Crosshair) */
+  .cursor-crosshair {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: -9px;
+    margin-left: -9px;
+    pointer-events: none !important;
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+    transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1), transform 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .crosshair-line {
+    position: absolute;
+    background-color: #FFFFFF;
+    pointer-events: none !important;
+  }
+
+  .crosshair-h {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  .crosshair-v {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  /* Active Spiral state: circle collapses and fades out, crosshair scales in */
+  .custom-cursor.cursor-state-spiral .cursor-body {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  .custom-cursor.cursor-state-spiral .cursor-crosshair {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .cursor-body,
+  .cursor-label,
+  .cursor-crosshair {
+    transition: none !important;
+    animation: none !important;
+  }
+}
