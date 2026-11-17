@@ -549,7 +549,7 @@ body {
     margin: 0 auto;
   }
 
-  /* 2 & 3. Name typography: Significantly larger, split into exactly two lines: NEHA / TRIVEDI */
+  /* 2 & 3. Name typography: Significantly larger, split into exactly two lines: Neha / Trivedi */
   .hero-title-aurora {
     font-family: var(--font-display);
     font-size: clamp(3.2rem, 15vw, 5.2rem);
@@ -566,7 +566,6 @@ body {
     justify-content: center;
     width: 100%;
     white-space: normal;
-    text-transform: uppercase;
   }
 
   .hero-name-line {
@@ -574,7 +573,6 @@ body {
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    text-transform: uppercase;
   }
 
   /* 4. Subtitle: Graphic Designer || Aspiring Filmmaker */
