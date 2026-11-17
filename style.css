@@ -2595,7 +2595,18 @@ body {
   text-transform: uppercase;
 }
 
+.editing-project-desc {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 8px 0 0;
+}
+
 /* Waiting slot for second video file */
+.editing-card-placeholder[style*="display: none"] {
+  display: none !important;
+}
 .editing-stage-waiting {
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, rgba(12, 12, 12, 0.98) 75%);
   border: 1px dashed rgba(255, 255, 255, 0.18);

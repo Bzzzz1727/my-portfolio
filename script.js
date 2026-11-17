@@ -352,11 +352,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!stage || !track || slots.length === 0) return;
 
-    const NUM_PROJECTS = 7;
-    const TOTAL_ITEMS = slots.length; // 35 items (5 sets of 7)
+    const NUM_PROJECTS = 4;
+    const TOTAL_ITEMS = slots.length; // 28 items (7 sets of 4)
 
     // ------------------------------------------------------------------------
-    // Verified Data-Driven Graphic Design Project Registry (Strictly 7 Projects)
+    // Verified Data-Driven Graphic Design Project Registry (Strictly 4 Projects)
     // ------------------------------------------------------------------------
     const CASSETTE_PROJECTS = [
           {
@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "id": "art-against-fascists",
                 "badge": "INDEPENDENT PROJECT",
                 "title": "ART AGAINST FASCISTS",
-                "artist": "2026",
+                "artist": "",
                 "category": "PROTEST POSTER SERIES",
                 "year": "2026",
                 "type": "Independent Project",
@@ -423,54 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 "previewArtworkImage": "assets/images/fascists-poster-01.jpg",
                 "artworkImage": "assets/images/fascists-front.png",
                 "spineImage": "assets/images/fascists-spine.png"
-          },
-          {
-                "id": "project-05",
-                "badge": "ARCHIVE",
-                "title": "PROJECT 05",
-                "artist": "COMING SOON",
-                "category": "GRAPHIC DESIGN",
-                "type": "Archive Project",
-                "role": "Graphic Design",
-                "software": "Graphic Design",
-                "shortDescription": "Upcoming graphic design archive project.",
-                "metadataLine": "GRAPHIC DESIGN · VISUAL IDENTITY",
-                "caseStudyUrl": "#",
-                "previewArtworkImage": "assets/images/cassette-front-cropped.png",
-                "artworkImage": "assets/images/cassette-front-cropped.png",
-                "spineImage": "assets/images/cassette-spine-cropped.png"
-          },
-          {
-                "id": "project-06",
-                "badge": "ARCHIVE",
-                "title": "PROJECT 06",
-                "artist": "COMING SOON",
-                "category": "GRAPHIC DESIGN",
-                "type": "Archive Project",
-                "role": "Graphic Design",
-                "software": "Graphic Design",
-                "shortDescription": "Upcoming graphic design archive project.",
-                "metadataLine": "GRAPHIC DESIGN · VISUAL IDENTITY",
-                "caseStudyUrl": "#",
-                "previewArtworkImage": "assets/images/cassette-front-cropped.png",
-                "artworkImage": "assets/images/cassette-front-cropped.png",
-                "spineImage": "assets/images/cassette-spine-cropped.png"
-          },
-          {
-                "id": "project-07",
-                "badge": "ARCHIVE",
-                "title": "PROJECT 07",
-                "artist": "COMING SOON",
-                "category": "GRAPHIC DESIGN",
-                "type": "Archive Project",
-                "role": "Graphic Design",
-                "software": "Graphic Design",
-                "shortDescription": "Upcoming graphic design archive project.",
-                "metadataLine": "GRAPHIC DESIGN · VISUAL IDENTITY",
-                "caseStudyUrl": "#",
-                "previewArtworkImage": "assets/images/cassette-front-cropped.png",
-                "artworkImage": "assets/images/cassette-front-cropped.png",
-                "spineImage": "assets/images/cassette-spine-cropped.png"
           }
     ];
 
@@ -540,11 +492,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (modalBadge) modalBadge.textContent = project.badge || project.type || 'PROJECT';
         if (modalTitle) modalTitle.textContent = project.title || '';
-        if (modalArtist) modalArtist.textContent = project.artist || '';
+        if (modalArtist) {
+          modalArtist.textContent = project.artist || '';
+          modalArtist.style.display = project.artist ? 'inline' : 'none';
+        }
+        const modalDivider = modal.querySelector('.preview-modal-divider');
+        if (modalDivider) {
+          modalDivider.style.display = (project.artist && project.category) ? 'inline' : 'none';
+        }
         if (modalCategory) modalCategory.textContent = project.category || '';
         if (modalDescription) modalDescription.textContent = project.shortDescription || '';
         if (modalRole) modalRole.textContent = project.role || 'Graphic Design';
-        if (modalSoftware) modalSoftware.textContent = project.software || 'Canva';
+        if (modalSoftware) modalSoftware.textContent = project.software || '—';
         if (modalTags) {
           modalTags.textContent = project.metadataLine || '';
           modalTags.style.display = project.metadataLine ? 'block' : 'none';
@@ -742,8 +701,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // State: Start at middle set (item 14, Project 01: Kabhi Kabhi)
-    let targetIndex = 14;
+    // State: Start at middle set (item 12, Project 01: Kabhi Kabhi)
+    let targetIndex = 12;
     let currentIndex = targetIndex;
     let isDragging = false;
     let hasDragged = false;
@@ -827,12 +786,13 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex += (targetIndex - currentIndex) * 0.14;
       }
 
-      // Toroidal infinite wrap check for 5 sets of 7 projects (35 slots)
-      // Keeps currentIndex smoothly in the middle set [14, 21)
-      if (currentIndex >= NUM_PROJECTS * 3) {
+      // Toroidal infinite wrap check for 7 sets of 4 projects (28 slots)
+      // Keeps currentIndex smoothly in the middle set [12, 16)
+      while (currentIndex >= NUM_PROJECTS * 4) {
         currentIndex -= NUM_PROJECTS;
         targetIndex -= NUM_PROJECTS;
-      } else if (currentIndex < NUM_PROJECTS * 2) {
+      }
+      while (currentIndex < NUM_PROJECTS * 3) {
         currentIndex += NUM_PROJECTS;
         targetIndex += NUM_PROJECTS;
       }
